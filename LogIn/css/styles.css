@@ -1,0 +1,411 @@
+:root {
+    --yellow: #feb820;
+    --colorBg: #fff;
+    --colorFont: #333641;
+    --active: #4A76A8;
+}
+@charset "utf-8";
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/roboto.eot');
+    src: 
+      local('☺'), 
+      url('../fonts/roboto.woff') format('woff'), 
+      url('../fonts/roboto.ttf') format('truetype'), 
+      url('../fonts/roboto.svg') format('svg');
+      font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Roboto-Black';
+    src: url('../fonts/roboto-black.eot');
+    src: 
+      local('Roboto-Black'), 
+      url('../fonts/Roboto-Black.woff') format('woff'), 
+      url('../fonts/Roboto-Black.ttf') format('truetype'), 
+      url('../fonts/Roboto-Black.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+
+body {
+    background: url(../images/wood-l.png);
+    background-color: #F0F3F8;
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-size: contain;
+}
+
+.goodly-webinar__title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 26px;
+    /* or 100% */
+    color: #333641;
+}
+
+
+.goodly-webinar__header {
+    background-color: #F0F3F8;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-left: 28px;
+    padding-right: 28px;
+    height: 8vh;
+    align-items: center;
+    position: relative;
+}
+.goodly-webinar__header:after {
+    height: 1px;
+    background-color:  rgba(51, 54, 65, 0.1);
+    position: absolute;
+    bottom: 0;
+    left: 28px;
+    right: 28px;
+    content: "";
+    position: absolute;
+}
+.goodly-webinar__exit-text {
+    padding: 0;
+    margin: 0;
+    color: #222;
+    font-size: 14px;
+    position: relative;
+    font-weight: 500;
+    padding-right: 36px;
+    line-height: 24px;
+    cursor: pointer;
+}
+.goodly-webinar__exit-ic {
+    position: absolute;
+    right: 0;
+}
+/*.goodly-webinar__footer {
+    width: 100%;
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    height: 20vh;
+    box-sizing: border-box;
+    padding-top: 4vh;
+}*/
+
+.goodly-webinar__main {
+    padding-left: 28px;
+    height: auto;
+    padding-top: 3vh;
+    box-sizing: border-box;
+    max-height: 92vh;
+    /*overflow: hidden;*/
+}
+.goodly-webinar__main-container {
+    width: 100%;
+    display: flex;
+    margin-bottom: 30px;
+}
+.goodly-webinar__content-block {
+    width: 70%;
+    min-height: 60vh;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0 0;
+    box-sizing: border-box;
+}
+.goodly-webinar__right-column {
+    width: 30%;
+    min-height: 60vh;
+    box-sizing: border-box;
+    padding-right: 30px;
+    padding-left: 30px;
+    background: #F0F3F8;
+    opacity: 0.85;
+}
+
+.goodly-webinar__header {
+
+}
+.goodly-webinar__chat-title{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 18px;
+    color: #333641;
+}
+.goodly-webinar__chat-members {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
+    text-decoration-line: underline;
+    color: #4A76A8;
+}
+.goodly-webinar__chat-header{
+    width: 100%;
+    /*display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    align-items: center;*/
+    position: relative;
+    height: 50px;
+}
+.goodly-webinar__chat-input {
+    background: #FFFFFF;
+    border: 2px solid #DDE0E6;
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 48px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+}
+
+.goodly-webinar-video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+.goodly-webinar-video-container iframe,
+.goodly-webinar-video-container #banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.b-overlay {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#banner .name {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 48px;
+    margin-top: 20%;
+    text-align: center;
+
+    color: #333641;
+}
+#banner .name small{
+    font-size: 24px;
+}
+#timer {
+    border: 1px solid #333641;
+    box-sizing: border-box;
+    border-radius: 64px;
+    margin: 20px auto;
+    width: 300px;
+    height: 100px;
+    line-height: 100px;
+    padding:  10px 40px;
+    display: flex;
+    align-items: center;
+}
+#timer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+#timer .start-t {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 100%;
+    /* identical to box height, or 14px */
+    color: #333641;
+}
+#timer-clock {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 100%;
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
+
+    color: #333641;
+}
+
+#chat-wrap {
+    height: 100%;
+    position: relative;
+    max-height: 80vh;
+    min-height: 40vh;
+}
+#chat-form {
+    position: absolute;
+    bottom: -48px;
+    width: 100%;
+}
+#chat-form.disabled #chat-message{
+}
+#chat-form.disabled:after{
+    background-color: #DDE0E6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: "Чат заблокирован модератором";
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 43px;
+    color: #333333;
+    border: 2px solid #333641;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-image: url(../images/chat-lock-i.svg);
+    background-size: 27px 27px;
+    background-position: 10px 8px;
+    background-repeat: no-repeat;
+    padding-left: 50px;
+}
+#messages, #files{
+    /* max-height: 60vh; */
+    overflow: auto;
+    list-style: none;
+}
+#files {margin-bottom: 20px;}
+
+#files li {
+    margin-bottom: 8px;
+}
+#messages li {
+    padding: 5px 10px;
+    background: #FFFFFF;
+    border: 1px solid #E7E7EA;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 15px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
+    color: #333641;
+    margin-bottom: 5px;
+}
+#messages li .username {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 15px;
+    color: #333641;
+    margin-bottom: 10px;
+}
+#messages li .username .moderator {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    color: #333641;
+}
+@keyframes sheen {
+  0% {
+    transform: skewY(-45deg) translateX(0);
+  }
+  100% {
+    transform: skewY(-45deg) translateX(12.5em);
+  }
+}
+.file-btn {
+    background-color: #3CC1C1;
+    border: 1px solid #3CC1C1;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 0px #31AAAA;
+    border-radius: 4px;
+    padding: 15px 15px 15px 45px;
+    background-image: url(../images/file-btn-i.svg); 
+    background-position: 13px 15px;
+    background-size: 12px 16px;
+    background-repeat: no-repeat;
+    display: block;
+    color: #fff;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;
+    position: relative;
+    overflow: hidden;
+}
+.file-btn:after {
+    content: "";
+    width: 22px;
+    height: 22px;
+    background-image: url(../images/file-btn-arrow.svg); 
+    right: 12px;
+    top: 12px;
+    position: absolute;
+
+}
+.file-btn:before {
+    content: "";
+    background-color: rgba(255,255,255,0.5);
+    height: 100%;
+    width: 5em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -6.5em;
+    transform: skewX(-45deg) translateX(0);
+    transition: none;
+  }
+.file-btn:hover,
+.file-btn:focus {
+    background-color: #3CC1C1;
+    color: #fff;
+    border-bottom: 1px solid #37aeae;
+    text-decoration: none;
+}
+.file-btn:hover:before {
+    transform: skewX(-45deg) translateX(50em);
+    transition: all 0.5s ease-in-out;
+}
+.form_text-color:before {
+    display: block;
+    content: '';
+    position: absolute;
+    margin-top: -18px;
+    height: 2px;
+    width: 20px;
+    background-color:#DDE0E6;
+  }
+.form_text-color.icon_calendar::before {
+    margin-left: -17px;
+}
+  .form_text-color {
+    font-size: 13px;
+    position: relative;
+    margin-top: 40px;
+    color: #4A76A8;
+  }
