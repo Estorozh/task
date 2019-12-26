@@ -1,8 +1,10 @@
 @charset "utf-8";
 :root {
     --yellow: #feb820;
-    --colorBg: #fff;
-    --colorFont: #333641;
+    --colorBg: #151A25;
+    --colorFont: #fff;
+    /* --colorBg: #fff;
+    --colorFont: #333641; */
     --active: #4A76A8;
 }
 @font-face {
@@ -31,19 +33,21 @@
 
 body {
     background: url(../images/wood-l.png);
-    background-color: #F0F3F8;
+    background-color: var(--colorBg);
     background-repeat: repeat-x;
     background-position: bottom;
     background-size: contain;
     font-family: 'Roboto';
+    color: var(--colorFont);
 }
 .copyright {
     position: relative;
     bottom: -8px;
+    color: #333641;
 }
 
 .goodly-webinar__header {
-    background-color: #F0F3F8;
+    background-color: var(--colorBg);
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -59,7 +63,7 @@ body {
 }
 .goodly-webinar__header:after {
     height: 1px;
-    background-color:  rgba(51, 54, 65, 0.1);
+    background-color:  var(--colorFont);
     position: absolute;
     bottom: 0;
     left: 28px;
@@ -69,6 +73,9 @@ body {
 }
 .goodly-webinar__header-right {
     margin: 10px 0px;
+}
+.goodly-webinar__header svg path {
+    fill: var(--colorFont);
 }
 .goodly-webinar__header-center {
     width: 100%;
@@ -94,9 +101,8 @@ body {
     overflow-x: hidden;
     text-overflow: ellipsis;
 }
-.goodly-webinar__exit-ic {
-    position: absolute;
-    right: 0;
+.goodly-webinar__header-mobile {
+    display: none;
 }
 /*.goodly-webinar__footer {
     width: 100%;
@@ -119,11 +125,12 @@ body {
 }
 .bg {
     position: fixed;
-    background: url('../img/wood-l.png') repeat-x;
+    background: url('../img/wood-l.png') no-repeat;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 144px;
+    background-size: cover;
 }
 .goodly-webinar__main-container {
     width: 100%;
@@ -139,14 +146,17 @@ body {
     box-sizing: border-box;
 }
 .goodly-webinar__right-column {
-    width: 30%;
-    min-height: 60vh;
-    height:75vh;
+    position: relative;
+    width: 29%;
+    min-height: 50vh;
+    height: 88vh;
     box-sizing: border-box;
-    padding-right: 30px;
-    padding-left: 30px;
+    padding: 0 13px;
     background: #F0F3F8;
     opacity: 0.85;
+    left: 1%;
+    right: 0;
+    border-radius: 4px;
 }
 .goodly-webinar__chat-title{
     font-family: 'Roboto';
@@ -155,6 +165,9 @@ body {
     font-size: 18px;
     line-height: 18px;
     color: #333641;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
 }
 .goodly-webinar__chat-members {
     font-family: Roboto;
@@ -165,15 +178,19 @@ body {
     text-decoration-line: underline;
     color: #4A76A8;
 }
+#files-wrap {
+    width: 90%;
+    height: 40px;
+    border-bottom: 1px solid #fff;
+    margin-left: 5%;
+}
 .goodly-webinar__chat-header{
-    width: 100%;
-    /*display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    align-items: center;*/
+    display: flex;
+    justify-content: center;
     position: relative;
-    height: 50px;
-    top: 5px
+    width: 100%;
+    height: 20px;
+    top: 10px;
 }
 .goodly-webinar__chat-input {
     background: #FFFFFF;
@@ -187,15 +204,15 @@ body {
     outline: none;
 }
 #chat-form.disabled #chat-message{
+    z-index:1;
 }
 .chat-form_send {
     display: inline-block;
-    position: fixed;
+    position: absolute;
     width: 33px;
     height: 32px;
-    bottom: 24px;
-    opacity: .7;
-    left: 95.5%;
+    bottom: 17px;
+    right: 2%;
 }
 /* #chat-form.disabled:after {
     user-select: none;
@@ -210,15 +227,15 @@ body {
     box-sizing: border-box;
 
 } */
-#chat-form.disabled:after{
+#chat-form.disabled:before{
     background-color: #DDE0E6;
-    position: fixed;
-    bottom: 5px;
-    right: auto;
+    position: absolute;
+    right: 0;
+    left:0;
     content: "Чат заблокирован модератором";
     font-size: 13px;
     line-height: 70px;
-    color: #333333;
+    color: #333641;
     border: 2px solid #333641;
     box-sizing: border-box;
     border-radius: 4px;
@@ -228,7 +245,8 @@ body {
     background-repeat: no-repeat;
     padding-left: 75px;
     height: 70px;
-    width: 26%;
+    z-index: 1;
+    overflow: hidden;
 }
 
 .goodly-webinar-video-container {
@@ -256,7 +274,9 @@ body {
     width: 100%;
     height: 100%;
 }
-
+#banner .play {
+    display: none;
+}
 #banner .name {
     font-family: 'Roboto';
     font-style: normal;
@@ -266,7 +286,7 @@ body {
     margin-top: 20%;
     text-align: center;
     width: 100%;
-    color: var(--colorFont);
+    color: #333641;
 }
 #banner .name small{
     font-size: 16px;
@@ -324,13 +344,18 @@ body {
     max-height: 80vh;
     min-height: 40vh;
 }
+#chat-form {
+    position: relative;
+    top: 15px;
+}
 #chat-form #chat-message {
-    position: fixed;
+    /* position: fixed;
     bottom: 5px;
     width: 26%;
-    right: auto;
+    right: auto; */
     height: 70px;
     resize: none;
+    color: #333641;
 }
 
 #messages, #files{
@@ -375,7 +400,7 @@ body {
 .rank {
     font-size: 10px;
     line-height: 12px;
-    color: var(--colorFont);
+    color: #333641;
     margin-left: 15px;
 } 
 .flag {
@@ -401,7 +426,7 @@ body {
 .message_content {
     font-size: 13px;
     line-height: 18px;
-    color: var(--colorFont);
+    color: #333641;
 }
 
 @keyframes sheen {
@@ -476,7 +501,7 @@ body {
   
 .userControls_wrap {
     padding: 0 11px;
-    border-right: 1px solid rgba(51, 54, 65, 0.1);
+    border-right: 1px solid var(--colorFont);
     display: flex;
     align-items: center;
 }
@@ -564,6 +589,7 @@ background-color: var(--active);
     margin-top: 50px;
     display: flex;
     justify-content: center;
+    color: #333641;
 }
 .music_track {
     padding: 0 10px 0 5px;
@@ -573,4 +599,101 @@ background-color: var(--active);
 .music_track_name {
     font-weight: 700;
     color: var(--active);
+}
+.navbar {
+    background-color: transparent;
+    margin-bottom: 0;
+    border: 0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: var(--colorFont);
+}
+@media screen and (max-width:900px) {
+    .bg {
+        display:none;
+    }
+    .goodly-webinar__header:after {
+        left: 0;
+        right: 0;
+    }
+    .goodly-webinar__header-right {
+        order: 3;
+    }
+    .goodly-webinar__header-left {
+        order:2;
+    }
+    .goodly-webinar__header-mobile {
+        display: block;
+        order: 1;
+    }
+    /* Отключить из видимости все иконки кроме пользователей */
+    .userControls_wrap:not(:nth-child(3)), .logout{
+        display: none;
+    }
+    .userControls_wrap:nth-child(3) {
+        order: 3;
+        border-right: 0;
+    }
+    .goodly-webinar__header-center {
+        display:none;
+    }
+    .goodly-webinar__main-container {
+        margin:0;
+    }
+    .goodly-webinar__right-column {
+        display: flex;
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        height: 23vh;
+        padding:0;
+        padding-bottom: 70px;
+        left:0;
+        border-radius: 0;
+    }
+    .goodly-webinar__main {
+        padding-top:0;
+        max-height: 100%;
+    }
+    .goodly-webinar-video-container {
+        z-index: 2;
+    }
+    #banner .name {
+        display: none;
+    }
+    #banner .music {
+        display: none;
+    }
+    #timer {
+        display: none;
+    }
+    #banner .play {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #banner .play img {
+        width: 80px;
+        height: 80px;
+    }
+    #chat-form #chat-message {
+        width: 100%;
+        left: 0;
+        right:0;
+        opacity: .8;
+        z-index: 1;
+    }
+    #chat-form #chat-message:active, #chat-form #chat-message:focus {
+        opacity: 1;
+    }
+    .chat-form_send {
+        left: 93%;
+    }
+    #chat-wrap { width: 100%; }
+    .copyright { display: none; }
+    #files-wrap {
+        display: flex;
+    }
+
 }

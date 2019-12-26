@@ -50,7 +50,7 @@ b=0,e=a(document).find("script[src]");b<e.length;b++)if(c=this.normUrl(e[b].src?
 <header class="goodly-webinar__header">
     <div class="goodly-webinar__header-left">
         <i class="goodly-webinar__header-logo">
-            <img id="shop-logo" src="img/logo.png" alt="" height="30px">
+            <img id="shop-logo" src="img/logo-light.svg" alt="" height="30px">
         </i>
     </div>
     <div class="goodly-webinar__header-center">
@@ -59,15 +59,28 @@ b=0,e=a(document).find("script[src]");b<e.length;b++)if(c=this.normUrl(e[b].src?
             <small class="speacker">Илья Ситнов</small>
         </div>
     </div>
+    <div class="goodly-webinar__header-mobile">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-main">
+            </div>
+            </div>
+        </nav>
+    </div>
     <div class="goodly-webinar__header-right">
         <div class="userControls">
             <div class="userControls_wrap">
                 <span class="userControls_icon icon_message">
-                    <span class="new message">1</span>
                     <svg width="22" height="19" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg"><path d="M0 10.3906C0 13.5132 2.55622 14.8438 5.72603 14.8438H6.32877V19L10.2466 14.8438H15.9726C19.1424 14.8438 22 13.5132 22 10.3906V4.15625C22 1.03372 19.1424 0 15.9726 0H5.72603C2.55622 0 0 1.03372 0 4.15625V10.3906ZM15.648 5.77363C16.5482 5.77363 17.2809 6.49533 17.2809 7.38209C17.2809 8.26886 16.5482 8.99056 15.648 8.99056C14.7475 8.99056 14.0149 8.26886 14.0149 7.38209C14.0149 6.49533 14.7478 5.77363 15.648 5.77363ZM10.8493 5.77363C11.7498 5.77363 12.4824 6.49533 12.4824 7.38209C12.4824 8.26886 11.7498 8.99056 10.8493 8.99056C9.94882 8.99056 9.21619 8.26886 9.21619 7.38209C9.21619 6.49533 9.94882 5.77363 10.8493 5.77363ZM6.0506 5.77363C6.9511 5.77363 7.68373 6.49533 7.68373 7.38209C7.68373 8.26886 6.9511 8.99056 6.0506 8.99056C5.15041 8.99056 4.41778 8.26886 4.41778 7.38209C4.41778 6.49533 5.15011 5.77363 6.0506 5.77363Z" fill="#333641"/></svg>
                 </span>
                 <span class="userControls_icon">
-                    <span class="new">1</span>
                         <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.0664 10.3673C14.1687 9.7667 13.0893 9.41647 11.928 9.41647C8.80762 9.41647 6.27828 11.9454 6.27828 15.0665C6.27828 16.5129 6.82174 17.8323 7.71562 18.8317H1.25616C0.562482 18.8317 0 18.2711 0 17.5774V5.64988H5.64988V0H13.8115C14.5051 0 15.0664 0.562477 15.0664 1.25553V10.3673ZM4.39562 0V4.39435H0L4.39562 0ZM9.4171 14.3487V15.784H11.2109V17.5774H12.6458V15.784H14.4392V14.3487H12.6458V12.5553H11.2109V14.3487H9.4171ZM7.53381 15.0665C7.53381 12.639 9.50107 10.672 11.928 10.672C14.3552 10.672 16.3225 12.639 16.3225 15.0665C16.3225 17.4934 14.3552 19.4607 11.928 19.4607C9.50107 19.4607 7.53381 17.4934 7.53381 15.0665Z" fill="#333641"/></svg>
                 </span>
             </div>
@@ -108,7 +121,6 @@ b=0,e=a(document).find("script[src]");b<e.length;b++)if(c=this.normUrl(e[b].src?
         padding: 0;
         max-height: 85%;
     }
-    #files-wrap {display: none;     max-height: 40vh;}
     .goodly-webinar-video-container .overlay,
     .goodly-webinar-video-container .preload {
         content: "";
@@ -138,7 +150,6 @@ b=0,e=a(document).find("script[src]");b<e.length;b++)if(c=this.normUrl(e[b].src?
         bottom: 0;
         position: absolute;
     }
-    #files-wrap{overflow: auto;}
     .goodly-webinar__header-right {display: flex;}
     .goodly-webinar__header .members-count-wrap{
         padding: 0px 25px;
@@ -161,8 +172,7 @@ b=0,e=a(document).find("script[src]");b<e.length;b++)if(c=this.normUrl(e[b].src?
             margin-top: 7%;
         }
     }
-    @media (max-width: 767px) {
-        .goodly-webinar__exit-text {display: none;}
+    @media (max-width: 900px) {
         .goodly-webinar__header .members-count-wrap{border: none; padding: 0}
         .goodly-webinar__main-container{flex-direction: column;}
         .goodly-webinar__content-block {width: 100%;min-height: auto;}
@@ -175,14 +185,13 @@ b=0,e=a(document).find("script[src]");b<e.length;b++)if(c=this.normUrl(e[b].src?
         }
         .goodly-webinar__main{padding-left: 0; overflow: auto;}
         .goodly-webinar__chat-members {display: none;}
-        .goodly-webinar__right-column {width: 100%; padding: 20px 0}
-        #files-wrap {border-bottom: 1px solid rgba(51, 54, 65, 0.1); padding: 0px 20px;}
+        .goodly-webinar__right-column {width: 100%;}
         #chat-wrap {padding: 20px;}
         .volume-ic {display: none;}
         #messages {max-height: 300px}
         /* #chat-form {position: relative; margin-top: 10px;} */
-        #banner .name {font-size: 28px; margin-top: 10px;}
-        #banner .name small {font-size: 22px;}
+        #banner .name {font-size: 16px;}
+        #banner .name small {font-size: 14px;}
         #timer {margin: 10px auto;}
         #timer-clock{font-size: 40px;}
         #timer{height: 85px;}
@@ -253,7 +262,7 @@ b=0,e=a(document).find("script[src]");b<e.length;b++)if(c=this.normUrl(e[b].src?
         <div class="copyright">© Goodly.pro, 2000-2020 Все права защищены законом.</div>
     </div>
     <div class="goodly-webinar__right-column">
-        <div id="files-wrap" style="display: none;">
+        <div id="files-wrap">
             <div class="goodly-webinar__chat-header">
                 <img src="img/files-i.svg" alt="" style="margin-right: 30px;" width="20">
                 <span class="goodly-webinar__chat-title">Дополнительные материалы</span>
@@ -321,339 +330,11 @@ b=0,e=a(document).find("script[src]");b<e.length;b++)if(c=this.normUrl(e[b].src?
         </div>
     </div>
 </div>
-
-
-<script type="text/javascript">
-
-$("#shop-logo").attr('src', 'img/logo.png');
-
-// create object and connect to web socket server
-var socket = new YiiNodeSocket();
-socket.debug(false);
-
-var webinarRoom;
-var player;
-
-var visiters = 1;
-var endR = 'https://propiar.goodly.pro/store/29vwk4nx';
-var logoutR = 'https://propiar.goodly.pro/stock/1all';
-var videoDuration;
-var username = '123';
-var startvisiters = parseInt(90);
-var lockChat = parseInt(0);
-
-var isRoomStart = false;
-
-
-socket.onConnect(function () {
-
-    webinarRoom = socket.room('gwRoom3727').join(function (success, numberOfRoomSubscribers) {
-        // success - boolean, numberOfRoomSubscribers - number of room members
-        // if error occurred then success = false, and numberOfRoomSubscribers - contains error message
-        if (success) {
-
-            console.log('client in room: gwRoom3727');
-            // console.log(numberOfRoomSubscribers + ' clients in room: gwRoom3727');
-            visiters = numberOfRoomSubscribers;
-
-            $("#messages").scrollTop($("#messages")[0].scrollHeight);
-            resizeChat();
-
-            //если человек пришел позже даты начала, загружаем видео и мотаем на нужный момент
-            if(needStart) {
-
-                var start = parseInt(+new Date()/1000) - parseInt(1577251200);
-                if(!isRoomStart)
-                    startRoom(start);
-
-            } else {
-
-                $('.show-on-start').hide();
-
-                $('.countdown').downCount({
-                    date: new Date('2019-12-25 08:20:00'),
-                    offset: +3
-                    }, function () {
-                });
-
-                //лочим чат до начала вебинара
-                webinarRoom.emit('lockChat', {
-                    value: 1
-                });
-
-                var wait = parseInt(1577251200) - parseInt(+new Date()/1000);
-
-                console.log('Старт через ' + wait + ' секунд');
-
-                setTimeout(function() {
-                    if(!isRoomStart)
-                        startRoom(1);
-                }, wait*1000)
-            }
-
-            // отображаем кол-во  людей в комнате
-            webinarRoom.emit('visitersChange', {
-                count: numberOfRoomSubscribers
-            });
-
-            /*----------------------------------------*/
-            this.on('visitersChange', function (data) {
-                $(".members-count").text(startvisiters + data.count);
-            });
-
-            this.on('goOnline', function (data) {
-
-                console.log('goOnline');
-                console.log(data);
-
-                //начало трансляции,
-                $('.hide-on-start').hide();
-                $('.show-on-start').show();
-
-                initPlayer(data.url, 1);
-
-                webinarRoom.emit('lockChat', {
-                    value: 0
-                });
-
-            });
-            
-            this.on('chat-message', function (data) {
-
-                //сообщение в чат
-                if(data.role == 'moder' || data.role == 'admin') {
-                    // console.log(data);
-                    $('#messages').append($('<li><p class="username">' + data.username +' <span class="moderator">Модератор</span> </p>' + replaceLinks(data.message) + '</li>'));
-                } else {
-
-                    var re = /(https?|ftp):\/\/\S+[^\s.,> )\];'\"!?]/; 
-                    var subst = '[ссылки запрещены]'; 
-
-                    $('#messages').append($('<li><p class="username">' + data.username +'</p>' + data.message.replace(re, subst) + '</li>'));
-                }
-
-                $("#messages").scrollTop($("#messages")[0].scrollHeight);
-
-            });
-
-            this.on('files', function (data) {
-                console.log('files event');
-                console.log(data['files']);
-
-                $("#files").empty();
-
-                data['files'].forEach(function(value, index) {
-
-                    //добавление кнопки/ссылки
-                    if(value.url) {
-                        var btn = '<li><a class="file-btn" href="' + value.url + '" target="_blank">' + value.title + '</a></li>';
-                        $("#files").append($(btn));
-                        $("#files-wrap").slideDown('fast', function() {
-                            resizeChat();
-                        });
-                    }
-                });
-
-                //добавление кнопки/ссылки
-                // var btn = '<li><a class="file-btn" href="' + data.url + '" target="_blank">' + data.title + '</a></li>';
-                // $("#files").append($(btn));
-                // $("#files-wrap").slideDown('fast', function() {
-                //     var height = $("#files-wrap").height();
-                //     $("#chat-wrap").css('max-height', 'calc(80vh - ' + height + 'px)')
-                // });
-
-            });
-
-            // this.on('lockChat', function (data) {
-            //     //лок/анлок чата
-            //     if(data.value) {
-            //         $('#chat-form').addClass('disabled');
-            //     } else {
-            //         $('#chat-form').removeClass('disabled');
-            //     }
-            // });
-
-            /*НА ПОТОМ*/
-            this.on('presentationName', function (data) {
-                //показать презентацию
-                //{"action":"presentationName","timeshift":258,"data":"aaaaaaaaaaaaaaaaaa.pdf"},
-            });
-            this.on('presentationPage', function (data) {
-                //показать страницу презентации
-                //{"action":"presentationPage","timeshift":258,"data":"0"},
-            });
-            /*----------------------------------------*/
-
-        } else {
-            // numberOfRoomSubscribers - error message
-            alert('Произошла ошибка при подключении к комнате. Попробуйте обновить страницу');
-        }
-    });
-
-    webinarRoom.on('leave', function() {
-        visiters = visiters-1;
-        webinarRoom.emit('visitersChange', {
-            count: visiters
-        });
-        console.log("Someone left the room.");
-    });
-
-});
-
-socket.onDisconnect(function () {
-    console.log('onDisconnect');
-});
-
-socket.onReconnect(function () {
-    console.log('onReconnect');
-});
-
-window.onbeforeunload = function() {
-    //покинул комнату
-    webinarRoom.emit('leave');
-    if(logoutR) {
-        window.location.href = logoutR;
-    } else {
-        window.close();
-    }
-};
-
-/*отправка сообщений в чате*/
-$('#chat-form').submit(function(e) {
-    e.preventDefault();
-    if(!lockChat)
-        webinarRoom.emit('chat-message', {
-            username: username,
-            message:  $('#chat-message').val(),
-        });
-
-    $('#chat-message').val('');
-
-    return false;
-});
-
-$('.overlay, .preload').on('click', function(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    console.log('click on video');
-    player.playVideo();
-    return false;
-
-});
-
-$('.logout-btn').on('click', function(event) {
-    webinarRoom.emit('leave');
-    if(logoutR) {
-        window.location.href = logoutR;
-    } else {
-        window.close();
-    }
-
-    return false;
-
-});
-
-function lparser(url) {
-    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
-    var match = url.match(regExp);
-    return (match && match[7].length==11)? match[7] : false;
-}
-
-function startRoom(time)
-{
-    $('.hide-on-start').hide();
-    $('.show-on-start').show();
-
-    initPlayer('http://www.youtube.com/embed/UV6AAhNYGwQ', time);
-
-    webinarRoom.emit('lockChat', {
-        value: lockChat,
-    });
-
-    isRoomStart = true;
-}
-
-function initPlayer(url, start) {
-
-    console.log('initPlayer from ' + start);
-
-    // var tag = document.createElement('script');
-
-    // tag.src = "https://www.youtube.com/iframe_api";
-    // var firstScriptTag = document.getElementsByTagName('script')[0];
-    // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    var videoID = lparser(url);
-
-    player = new YT.Player('player', {
-        height: '100%',
-        width: '100%',
-        videoId: videoID,
-        playerVars: {
-            'autoplay': 1,
-            'controls': 0,
-            'disablekb': 1,
-            'fs': 0,
-            'iv_load_policy': 3,
-            'loop': 0,
-            'modestbranding': 1,
-            'showinfo': 0,
-            'rel':0,
-            'start': parseInt(start),
-        },
-        events: {
-          'onReady': onPlayerReady,
-          'onStateChange': onPlayerStateChange
-        }
-    });
-
-    function onPlayerReady(event) {
-        console.log('onPlayerReady');
-
-        event.target.playVideo();
-        event.target.setPlaybackQuality('highres');
-
-        // videoDuration = event.target.getDuration();
-
-        player.playVideo();
-
-    }
-
-    function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING) {
-            setTimeout(function() {
-                $('.preload').hide();
-            }, 3500);
-        } else if (event.data == YT.PlayerState.ENDED) {
-            console.log('video end');
-            if(endR) {
-                window.location.href = endR;
-            } else {
-                $("#player").hide();
-                $('.show-on-start').hide();
-                $('.hide-on-end').hide();
-                $('.hide-on-start').show();
-
-            }
-        } else {
-            // console.log('onPlayerStateChange');
-            // console.log(event.data);
-            player.playVideo();
-        }
-    }
-
-    // function stopVideo() {
-    //     player.stopVideo();
-    // }
-}
-
-function resizeChat()
-{
-    var height = $("#files-wrap").height();
-    $("#chat-wrap").css('max-height', 'calc(80vh - ' + height + 'px)')
-}
-</script>
 </main>
+
+
+<!-- закомментировал для удобства верстки
+<script src="js/webinar.js"></script> -->
 
 <!-- footer end -->
 <div class="notifications top-right" id="notifications"></div>
@@ -662,13 +343,6 @@ function resizeChat()
 <!-- <script src="/assets/b428d944/cc/js/script.js"></script> -->
 <!-- <script type="text/javascript">jQuery(function() {jQuery('.scrollblock').jScrollPane({hideFocus:true});})</script> -->
 
-<script type="text/javascript">
-/*<![CDATA[*/
-jQuery(function($) {
-jQuery('[data-toggle=popover]').popover();
-jQuery('[data-toggle=tooltip]').tooltip();
-});
-/*]]>*/
-</script>
+
 
 </body></html>
