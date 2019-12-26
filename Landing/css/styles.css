@@ -199,7 +199,7 @@ body {
     height: 78vh;
     box-sizing: border-box;
     padding: 0 13px;
-    background: #F0F3F8;
+    background-color: var(--colorBg);
     opacity: 0.85;
     left: 1%;
     right: 0;
@@ -211,7 +211,7 @@ body {
     font-weight: 500;
     font-size: 18px;
     line-height: 18px;
-    color: #333641;
+    color: var(--colorFont);
     white-space: nowrap;
     overflow-x: hidden;
     text-overflow: ellipsis;
@@ -230,6 +230,13 @@ body {
     height: 40px;
     border-bottom: 1px solid #fff;
     margin-left: 5%;
+    margin-bottom: 5px;
+}
+#files-wrap svg {
+    margin-right: 30px;
+}
+#files-wrap svg path {
+    fill: var(--colorFont);
 }
 .goodly-webinar__chat-header{
     display: flex;
@@ -727,6 +734,9 @@ background-color: var(--active);
     #banner .play img {
         width: 80px;
         height: 80px;
+    }
+    #files-wrap {
+        margin-bottom: 0;
     }
     #chat-form #chat-message {
         width: 100%;
