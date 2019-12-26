@@ -90,7 +90,7 @@ b=0,e=a(document).find("script[src]");b<e.length;b++)if(c=this.normUrl(e[b].src?
                 <span class="userControls_icon">
                     <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.4918 0.937908C11.0543 3.31019 11.3478 5.70693 11.3478 8.07921C11.3478 10.427 11.0788 12.726 10.5163 14.9026C10.4674 15.0738 10.394 15.2205 10.2962 15.3428C10.1005 15.6118 9.80707 15.7586 9.48913 15.8075C9.44022 15.8075 9.3913 15.8075 9.34239 15.8075C9.07337 15.8075 8.80435 15.7096 8.6087 15.5629L4.84239 12.7015C4.79348 12.677 4.74457 12.6526 4.69565 12.6526H2.00543C1.56522 12.6526 1.17391 12.408 0.953804 12.0412C0.317935 10.9651 0 9.61997 0 8.10367C0 6.56291 0.317935 5.14443 0.953804 3.87269C1.14946 3.45693 1.58967 3.18791 2.05435 3.18791H4.72011C4.76902 3.18791 4.81793 3.16345 4.86685 3.13899L8.55978 0.253125C8.70652 0.155299 8.85326 0.0819293 9.02446 0.0330163C9.34239 -0.0403533 9.66033 0.00855986 9.9538 0.179756C10.2228 0.350951 10.4185 0.619973 10.4918 0.937908ZM17.4864 2.60095C17.4375 2.33193 17.1929 2.16073 16.9239 2.20965C16.6549 2.25856 16.4837 2.50313 16.5326 2.77215C16.8505 4.53302 17.0217 6.31834 17.0217 8.07921C17.0217 9.84008 16.8505 11.5765 16.5326 13.2395C16.4837 13.5086 16.6549 13.7531 16.9239 13.802C16.9484 13.802 16.9973 13.802 17.0217 13.802C17.2418 13.802 17.462 13.6308 17.5109 13.4107C17.8533 11.6988 18 9.889 18 8.07921C17.9755 6.26943 17.8043 4.43519 17.4864 2.60095ZM14.625 4.01943C14.356 4.04389 14.1603 4.28845 14.2092 4.55747C14.356 5.73139 14.4293 6.92976 14.4293 8.10367C14.4293 9.27758 14.356 10.4515 14.2092 11.5765C14.1848 11.8455 14.356 12.0901 14.625 12.1145C14.6495 12.1145 14.6739 12.1145 14.6984 12.1145C14.9429 12.1145 15.163 11.9433 15.1875 11.6743C15.3342 10.5004 15.4076 9.30204 15.4076 8.07921C15.4076 6.85639 15.3342 5.63356 15.1875 4.43519C15.1386 4.16617 14.894 3.97052 14.625 4.01943Z" fill="#333641"/>
-                        </svg>
+                    </svg>
                 </span>
             </div>
             <div class="userControls_wrap">
@@ -114,84 +114,6 @@ b=0,e=a(document).find("script[src]");b<e.length;b++)if(c=this.normUrl(e[b].src?
 <!-- content -->
 <main class="goodly-webinar__main"> 
     <div class="bg"></div>
-    <style>
-    #messages {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        max-height: 85%;
-    }
-    .goodly-webinar-video-container .overlay,
-    .goodly-webinar-video-container .preload {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background-color: transparent;
-        z-index: 9999;
-    }
-    .goodly-webinar-video-container .preload:before{
-        content: "";
-        height: 25%;
-        background-color: transparent; 
-        left: 0;
-        right: 0;
-        top: 0;
-        position: absolute;
-    }
-    .goodly-webinar-video-container .preload:after{
-        content: "";
-        height: 25%;
-        background-color: transparent;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        position: absolute;
-    }
-    .goodly-webinar__header-right {display: flex;}
-    .goodly-webinar__header .members-count-wrap{
-        padding: 0px 25px;
-        border-left: 1px solid rgba(51, 54, 65, 0.1);
-        border-right: 1px solid rgba(51, 54, 65, 0.1);
-    }
-    .goodly-webinar__header .members-count{
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: normal;
-        font-size: 13px;
-        line-height: 100%;
-        /* identical to box height, or 13px */
-
-
-        color: #333641;
-    }
-    @media (max-width: 900px) {
-        .goodly-webinar__header .members-count-wrap{border: none; padding: 0}
-        .goodly-webinar__main-container{flex-direction: column;}
-        .goodly-webinar__content-block {width: 100%;min-height: auto;}
-        .goodly-webinar__title {
-            font-size: 14px;
-            line-height: 18px;
-            text-align: center;
-            margin: 0 0 20px 0;
-            height: auto !important;
-        }
-        .goodly-webinar__main{padding-left: 0; overflow: auto;}
-        .goodly-webinar__chat-members {display: none;}
-        .goodly-webinar__right-column {width: 100%;}
-        #chat-wrap {padding: 20px;}
-        .volume-ic {display: none;}
-        #messages {max-height: 300px}
-        /* #chat-form {position: relative; margin-top: 10px;} */
-        #banner .name {font-size: 16px; }
-        #banner .name small {font-size: 14px;}
-        #timer {margin: 10px auto;}
-        #timer-clock{font-size: 40px;}
-        #timer{height: 85px;}
-    }
-</style>
  <script type="text/javascript">
 
     var needStart = false;
