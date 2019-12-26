@@ -149,7 +149,7 @@ body {
     position: relative;
     width: 29%;
     min-height: 50vh;
-    height: 88vh;
+    height: 78vh;
     box-sizing: border-box;
     padding: 0 13px;
     background: #F0F3F8;
@@ -644,7 +644,6 @@ background-color: var(--active);
         display: flex;
         flex-wrap: wrap;
         overflow-y: scroll;
-        height: 23vh;
         padding:0;
         padding-bottom: 70px;
         left:0;
@@ -687,13 +686,9 @@ background-color: var(--active);
     #chat-form #chat-message:active, #chat-form #chat-message:focus {
         opacity: 1;
     }
-    .chat-form_send {
-        left: 93%;
-    }
     #chat-wrap { width: 100%; }
     .copyright { display: none; }
-    #files-wrap {
-        display: flex;
+    #shop-logo {
+        width: 120px;
     }
-
 }
