@@ -83,6 +83,12 @@ b=0,e=a(document).find("script[src]");b<e.length;b++)if(c=this.normUrl(e[b].src?
 		left: 0;
 		background: rgba(255, 255, 255, 0.5);
 	}
+	.flex {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		height: 100vh;
+	}
 	.goodly-webinar__header {display: none;}
 	.goodly-webinar__main {min-height: 100vh}
 	.login-wrap {
@@ -145,9 +151,9 @@ b=0,e=a(document).find("script[src]");b<e.length;b++)if(c=this.normUrl(e[b].src?
 </style>
 <div class="cover"></div>
 
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2">
+<!-- <div class="container"> -->
+	<!-- <div class="row"> -->
+		<div class="flex">
 			<div class="login-wrap">
 				<img src="img/workPlace.png" class="workPlace"></img>
 				<h3 class="form_top">Вход на вебинар</h3>
@@ -162,8 +168,9 @@ b=0,e=a(document).find("script[src]");b<e.length;b++)if(c=this.normUrl(e[b].src?
 				</form>
 			</div>
 		</div>
-	</div>
-</div></main>
+	<!-- </div> -->
+<!-- </div> -->
+</main>
 
 <!-- footer end -->
 <div class="notifications top-right" id="notifications"></div>

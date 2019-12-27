@@ -97,11 +97,9 @@ body {
 }*/
 
 .goodly-webinar__main {
-    padding-left: 28px;
     height: auto;
-    padding-top: 3vh;
     box-sizing: border-box;
-    max-height: 92vh;
+    max-height: 100vh;
     /*overflow: hidden;*/
 }
 .goodly-webinar__main-container {
