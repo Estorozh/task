@@ -667,6 +667,36 @@ background-color: var(--active);
 .navbar-default .navbar-toggle .icon-bar {
     background-color: var(--colorFont);
 }
+/* 27.12 */
+.volume {
+    max-width: 200px;
+    width: 5%;
+    min-width: 100px;
+    height: 2px;
+    background-color: var(--colorFont);
+    align-self: center;
+    position: relative;
+}
+.volume:before {
+    content: '';
+    background-color: var(--active);
+    height: 2px;
+    width: 60%;
+    position: absolute;
+}
+.volume_thumb {
+    background-color: var(--active);
+    cursor: pointer;
+    position: absolute;
+    left: 60%;
+    width: 14px;
+    height: 14px;
+    top: -6px;
+    border-radius: 50%;
+}
+.volume_thumb:hover {
+    box-shadow: inset 0 0 0 1px var(--colorFont);
+}
 @media screen and (max-width:768px) {
     .bg {
         display:none;
