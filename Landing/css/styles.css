@@ -1,3 +1,5 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.23, autoprefixer: v9.7.3) */
+
 @charset "utf-8";
 :root {
     --yellow: #feb820;
@@ -44,7 +46,7 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    max-height: 85%;
+    max-height: calc(100vh - 120px);
 }
 /* стили, которые были с сайта с этого правила */
     .goodly-webinar-video-container .overlay,
@@ -76,7 +78,7 @@ body {
         bottom: 0;
         position: absolute;
     }
-    .goodly-webinar__header-right {display: flex;}
+    .goodly-webinar__header-right {display: -webkit-box;display: -ms-flexbox;display: flex;}
     .goodly-webinar__header .members-count-wrap{
         padding: 0px 25px;
         border-left: 1px solid rgba(51, 54, 65, 0.1);
@@ -96,13 +98,20 @@ body {
 .goodly-webinar__header {
     background-color: var(--colorBg);
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     padding-left: 28px;
     padding-right: 28px;
     height: auto;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: relative;
 }
 .icon {
@@ -128,8 +137,11 @@ body {
     width: 100%;
     margin-left: 20px;
     height: 36%;
-    align-self: self-end;
+    -ms-flex-item-align: self-end;
+        align-self: self-end;
     margin-bottom: 3px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     overflow: hidden;
     /* flex-grow:1; */
@@ -140,13 +152,15 @@ body {
     line-height: 26px;    
     white-space: nowrap;
     overflow-x: hidden;
-    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
 }
 .speacker {
     font-size: 16px;
     white-space: nowrap;
     overflow-x: hidden;
-    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
 }
 .goodly-webinar__header-mobile {
     display: none;
@@ -164,9 +178,10 @@ body {
 .goodly-webinar__main {
     position: relative;
     padding-left: 28px;
-    height: auto;
-    padding-top: 3vh;
-    box-sizing: border-box;
+    height: calc(100vh - 100px);
+    padding-top: 15px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     /* max-height: 92vh; */
     /*overflow: hidden;*/
 }
@@ -181,35 +196,54 @@ body {
 }
 .goodly-webinar__main-container {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-bottom: 30px;
     padding-right: 10px;
 }
 .goodly-webinar__content-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     /* width: 70%; */
     min-height: 60vh;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: 0 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 .goodly-webinar__right-column {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     /* overflow-y: scroll; */
     /* padding-bottom: 70px; */
     left:0;
     position: relative;
     width: 29%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     padding: 0 13px;
     background-color: var(--colorBg);
     opacity: 0.85;
     width: 450px;
     right: 0;
+    height: 100vh;
 }
 .goodly-webinar__chat-title{
     font-family: 'Roboto';
@@ -220,7 +254,8 @@ body {
     color: var(--colorFont);
     white-space: nowrap;
     overflow-x: hidden;
-    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
 }
 .goodly-webinar__chat-members {
     font-family: Roboto;
@@ -228,7 +263,8 @@ body {
     font-weight: normal;
     font-size: 13px;
     line-height: 18px;
-    text-decoration-line: underline;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
     color: #4A76A8;
 }
 #files-wrap {
@@ -245,8 +281,12 @@ body {
     fill: var(--colorFont);
 }
 .goodly-webinar__chat-header{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     position: relative;
     width: 100%;
     height: 20px;
@@ -255,7 +295,8 @@ body {
 .goodly-webinar__chat-input {
     background: #FFFFFF;
     border: 2px solid #DDE0E6;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     border-radius: 4px;
     height: 48px;
     display: block;
@@ -297,7 +338,8 @@ body {
     line-height: 70px;
     color: #333641;
     border: 2px solid #333641;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     border-radius: 4px;
     background-image: url('../img/block_chat.png');
     background-size: 27px 27px;
@@ -308,6 +350,9 @@ body {
     z-index: 1;
     overflow: hidden;
 }
+#chat-wrap {
+    height: calc(100vh - 46px);
+}
 /* оформление ссылок в чате */
 #chat-wrap a {
     display: inline-block;
@@ -316,7 +361,8 @@ body {
     font-weight: 700;
     font-size: 13px;
     line-height: 18px;
-    text-decoration-line: underline;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
     padding: 2px 7px;
     border-radius: 4px;
     background: #67B728;
@@ -338,6 +384,8 @@ body {
     height: 100%;
 }
 .b-overlay {
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.9)), to(rgba(255, 255, 255, 0.9)));
+    background: -o-linear-gradient(bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
     border-radius: 3px;
     position: absolute;
@@ -367,7 +415,8 @@ body {
 }
 #timer {
     border: 1px solid #333641;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     border-radius: 64px;
     margin: 60px auto;
     width: -webkit-max-content;
@@ -376,14 +425,22 @@ body {
     height: 100px;
     line-height: 100px;
     padding:  10px 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 #timer ul {
     list-style: none;
     padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 0;
 }
 
@@ -403,8 +460,14 @@ body {
     font-size: 48px;
     line-height: 100%;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     letter-spacing: 0.02em;
 
     color: #333641;
@@ -412,7 +475,7 @@ body {
 .copyright {
     position: relative;
     bottom: -8px;
-    color: #333641;
+    color: var(--colorFont);
 }
 
 #chat-wrap {
@@ -422,7 +485,7 @@ body {
 }
 #chat-form {
     position: relative;
-    top: 15px;
+    top: 0;
 }
 #chat-form #chat-message {
     /* position: fixed;
@@ -448,7 +511,8 @@ body {
     padding: 5px 10px;
     background: #FFFFFF;
     border: 1px solid #E7E7EA;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     border-radius: 4px;
     padding: 15px;
     font-family: 'Roboto';
@@ -505,19 +569,34 @@ body {
     color: #333641;
 }
 
-@keyframes sheen {
+@-webkit-keyframes sheen {
   0% {
-    transform: skewY(-45deg) translateX(0);
+    -webkit-transform: skewY(-45deg) translateX(0);
+            transform: skewY(-45deg) translateX(0);
   }
   100% {
-    transform: skewY(-45deg) translateX(12.5em);
+    -webkit-transform: skewY(-45deg) translateX(12.5em);
+            transform: skewY(-45deg) translateX(12.5em);
+  }
+}
+
+@keyframes sheen {
+  0% {
+    -webkit-transform: skewY(-45deg) translateX(0);
+            transform: skewY(-45deg) translateX(0);
+  }
+  100% {
+    -webkit-transform: skewY(-45deg) translateX(12.5em);
+            transform: skewY(-45deg) translateX(12.5em);
   }
 }
 .file-btn {
     background-color: #3CC1C1;
     border: 1px solid #3CC1C1;
-    box-sizing: border-box;
-    box-shadow: 0px 1px 0px #31AAAA;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-box-shadow: 0px 1px 0px #31AAAA;
+            box-shadow: 0px 1px 0px #31AAAA;
     border-radius: 4px;
     padding: 15px 15px 15px 45px;
     background-image: url(../images/file-btn-i.svg); 
@@ -553,7 +632,11 @@ body {
     position: absolute;
     top: 0;
     left: -6.5em;
-    transform: skewX(-45deg) translateX(0);
+    -webkit-transform: skewX(-45deg) translateX(0);
+        -ms-transform: skewX(-45deg) translateX(0);
+            transform: skewX(-45deg) translateX(0);
+    -webkit-transition: none;
+    -o-transition: none;
     transition: none;
   }
 .file-btn:hover,
@@ -564,30 +647,47 @@ body {
     text-decoration: none;
 }
 .file-btn:hover:before {
-    transform: skewX(-45deg) translateX(50em);
+    -webkit-transform: skewX(-45deg) translateX(50em);
+        -ms-transform: skewX(-45deg) translateX(50em);
+            transform: skewX(-45deg) translateX(50em);
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
 
 
 .userControls {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
 }
   
 .userControls_wrap {
     padding: 0 11px;
     border-right: 1px solid var(--colorFont);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .userControls_icon {
     position: relative;
     margin: 0 11px;
     cursor: pointer;
     z-index: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .userControls_icon:hover {
     color: var(--active);
@@ -639,6 +739,7 @@ background-color: var(--active);
     transition:-webkit-transform 1s;
     -o-transition:transform 1s;
     transition:transform 1s;
+    transition:transform 1s, -webkit-transform 1s;
     transition:transform 1s,-webkit-transform 1s;
     margin-right:15px
 }
@@ -663,8 +764,12 @@ background-color: var(--active);
 }
 .music {
     margin-top: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     color: #333641;
 }
 .music_track {
@@ -685,12 +790,14 @@ background-color: var(--active);
     background-color: var(--colorFont);
 }
 /* 27.12 */
+.goodly-webinar__header {
+    height: auto;
+}
 .goodly-webinar__main {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 20px;
+    height: 100vh;
 }
 .goodly-webinar__content-block {
     width: 100%;
@@ -702,7 +809,9 @@ background-color: var(--active);
     min-width: 100px;
     height: 2px;
     background-color: var(--colorFont);
-    align-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     position: relative;
 }
 .volume:before {
@@ -723,24 +832,29 @@ background-color: var(--active);
     border-radius: 50%;
 }
 .volume_thumb:hover {
-    box-shadow: inset 0 0 0 1px var(--colorFont);
+    -webkit-box-shadow: inset 0 0 0 1px var(--colorFont);
+            box-shadow: inset 0 0 0 1px var(--colorFont);
 }
 
 .icon_theme:active .theme,
 .icon_theme:focus .theme,
 .icon_theme:hover .theme {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 .theme {
     /* после изменений поставить в режим none; */
     display: none;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     position: absolute;
     height: 340px;
     width: 245px;
     background-color: #fff;
     border-radius: 4px;
-    box-shadow: 0px 16px 20px rgba(51, 54, 65, 0.1);
+    -webkit-box-shadow: 0px 16px 20px rgba(51, 54, 65, 0.1);
+            box-shadow: 0px 16px 20px rgba(51, 54, 65, 0.1);
     top: 38px;
     right: -30px;
 }
@@ -781,9 +895,15 @@ background-color: var(--active);
         width: 100%;
     }
     .goodly-webinar__header-mobile .navbar-header {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
     }
 
     /* 27.12 */
@@ -792,7 +912,9 @@ background-color: var(--active);
         display: none;
     }
     .userControls_wrap:nth-child(3) {
-        order: 3;
+        -webkit-box-ordinal-group: 4;
+            -ms-flex-order: 3;
+                order: 3;
         border-right: 0;
     }
     .goodly-webinar__header-center {
@@ -806,7 +928,8 @@ background-color: var(--active);
     .goodly-webinar__main {
         padding-top:0;
         max-height: 100%;
-        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
         position: relative;
         top: 0;
     }
@@ -825,9 +948,15 @@ background-color: var(--active);
     #banner .play {
         width: 100%;
         height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
     #banner .play img {
         width: 80px;
@@ -857,7 +986,10 @@ background-color: var(--active);
     /* стили которые были добавлены */
     .goodly-webinar__header .members-count-wrap{border: none; padding: 0}
     .goodly-webinar__main-container{
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         padding: 0;
     }
     .goodly-webinar__title {
@@ -884,8 +1016,12 @@ background-color: var(--active);
         word-wrap: break-word;
     }
     .nav.navbar-nav {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
     }
     /* проверить элемент .navbar-collapse.collapse при нажатии от 768 до 900 происходят не корректные прыжки у лого */
     .goodly-webinar__header-mobile .navbar-toggle {
@@ -893,7 +1029,8 @@ background-color: var(--active);
     }
     .goodly-webinar__header-mobile .navbar-collapse {
         border: 0;
-        box-shadow: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
     }
     .goodly-webinar__header-mobile .navbar-nav span {
         display: block;
