@@ -1,10 +1,10 @@
+@charset "utf-8";
 :root {
     --yellow: #feb820;
     --colorBg: #fff;
     --colorFont: #333641;
     --active: #4A76A8;
 }
-@charset "utf-8";
 @font-face {
     font-family: 'Roboto';
     src: url('../fonts/roboto.eot');
@@ -123,10 +123,6 @@ body {
     padding-left: 30px;
     background: #F0F3F8;
     opacity: 0.85;
-}
-
-.goodly-webinar__header {
-
 }
 .goodly-webinar__chat-title{
     font-family: 'Roboto';
@@ -259,8 +255,6 @@ body {
     position: absolute;
     bottom: -48px;
     width: 100%;
-}
-#chat-form.disabled #chat-message{
 }
 #chat-form.disabled:after{
     background-color: #DDE0E6;
