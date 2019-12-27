@@ -667,7 +667,7 @@ background-color: var(--active);
 .navbar-default .navbar-toggle .icon-bar {
     background-color: var(--colorFont);
 }
-@media screen and (max-width:900px) {
+@media screen and (max-width:768px) {
     .bg {
         display:none;
     }
@@ -675,16 +675,22 @@ background-color: var(--active);
         left: 0;
         right: 0;
     }
+    /* 27.12 */
+    .goodly-webinar__header-left, 
     .goodly-webinar__header-right {
-        order: 3;
-    }
-    .goodly-webinar__header-left {
-        order:2;
+        display: none
     }
     .goodly-webinar__header-mobile {
         display: block;
-        order: 1;
+        width: 100%;
     }
+    .goodly-webinar__header-mobile .navbar-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* 27.12 */
     /* Отключить из видимости все иконки кроме пользователей */
     .userControls_wrap:not(:nth-child(3)), .logout{
         display: none;
@@ -753,7 +759,7 @@ background-color: var(--active);
     #shop-logo {
         width: 120px;
     }
-    .navbar-toggle.collapsed {
+    .navbar-toggle {
         display: block;
     }
     /* стили которые были добавлены */
@@ -778,4 +784,23 @@ background-color: var(--active);
     #timer {margin: 10px auto;}
     #timer-clock{font-size: 40px;}
     #timer{height: 85px;}
+    /* изменения от 27.12 */
+    #messages li {
+        word-wrap: break-word;
+    }
+    .nav.navbar-nav {
+        display: flex;
+        justify-content: space-between;
+    }
+    /* проверить элемент .navbar-collapse.collapse при нажатии от 768 до 900 происходят не корректные прыжки у лого */
+    .goodly-webinar__header-mobile .navbar-toggle {
+        float: left;
+    }
+    .goodly-webinar__header-mobile .navbar-collapse {
+        border: 0;
+        box-shadow: none;
+    }
+    .goodly-webinar__header-mobile .navbar-nav span {
+        display: block;
+    }
 }
