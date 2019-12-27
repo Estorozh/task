@@ -1,5 +1,3 @@
-/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.23, autoprefixer: v9.7.3) */
-
 @charset "utf-8";
 :root {
     --yellow: #feb820;
@@ -19,8 +17,8 @@
       url('../fonts/roboto.svg') format('svg');
       font-weight: normal;
     font-style: normal;
-  }
-  @font-face {
+}
+@font-face {
     font-family: 'Roboto-Black';
     src: url('../fonts/roboto-black.eot');
     src: 
@@ -30,9 +28,12 @@
       url('../fonts/Roboto-Black.svg') format('svg');
     font-weight: normal;
     font-style: normal;
-  }
-
-
+}
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
 body {
     background: url(../images/wood-l.png);
     background-color: var(--colorBg);
@@ -41,60 +42,8 @@ body {
     background-size: contain;
     font-family: 'Roboto';
     color: var(--colorFont);
+    height: 100vh;
 }
-#messages {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    max-height: calc(100vh - 120px);
-}
-/* стили, которые были с сайта с этого правила */
-    .goodly-webinar-video-container .overlay,
-    .goodly-webinar-video-container .preload {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background-color: transparent;
-        z-index: 9999;
-    }
-    .goodly-webinar-video-container .preload:before{
-        content: "";
-        height: 25%;
-        background-color: transparent; 
-        left: 0;
-        right: 0;
-        top: 0;
-        position: absolute;
-    }
-    .goodly-webinar-video-container .preload:after{
-        content: "";
-        height: 25%;
-        background-color: transparent;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        position: absolute;
-    }
-    .goodly-webinar__header-right {display: -webkit-box;display: -ms-flexbox;display: flex;}
-    .goodly-webinar__header .members-count-wrap{
-        padding: 0px 25px;
-        border-left: 1px solid rgba(51, 54, 65, 0.1);
-        border-right: 1px solid rgba(51, 54, 65, 0.1);
-    }
-    .goodly-webinar__header .members-count{
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: normal;
-        font-size: 13px;
-        line-height: 100%;
-        /* identical to box height, or 13px */
-        color: #333641;
-    }
-/* Здесь заканчиваются стили, которые были добавлены изначально */
-
 .goodly-webinar__header {
     background-color: var(--colorBg);
     width: 100%;
@@ -106,16 +55,12 @@ body {
             justify-content: space-between;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    padding-left: 28px;
-    padding-right: 28px;
-    height: auto;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    padding: 5px 28px;
+    height: 40px;
+    -webkit-box-align: flex-end;
+        -ms-flex-align: flex-end;
+            align-items: flex-end;
     position: relative;
-}
-.icon {
-    cursor: pointer;
 }
 .goodly-webinar__header:after {
     height: 1px;
@@ -127,24 +72,22 @@ body {
     content: "";
     position: absolute;
 }
-.goodly-webinar__header-right {
-    margin: 10px 0px;
-}
+
 .goodly-webinar__header svg path {
     fill: var(--colorFont);
 }
 .goodly-webinar__header-center {
+    height: 30px;
+    margin-bottom: -5px;
+    margin-top: 5px;
     width: 100%;
     margin-left: 20px;
-    height: 36%;
     -ms-flex-item-align: self-end;
         align-self: self-end;
-    margin-bottom: 3px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     overflow: hidden;
-    /* flex-grow:1; */
 }
 .goodly-webinar__title {
     font-weight: 500;
@@ -162,219 +105,285 @@ body {
     -o-text-overflow: ellipsis;
        text-overflow: ellipsis;
 }
+
 .goodly-webinar__header-mobile {
     display: none;
 }
-/*.goodly-webinar__footer {
-    width: 100%;
-    background-color: #fff;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    height: 20vh;
-    box-sizing: border-box;
-    padding-top: 4vh;
-}*/
+.navbar {
+    background-color: transparent;
+    margin-bottom: 0;
+    border: 0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: var(--colorFont);
+}
 
-.goodly-webinar__main {
-    position: relative;
-    padding-left: 28px;
-    height: calc(100vh - 100px);
-    padding-top: 15px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    /* max-height: 92vh; */
-    /*overflow: hidden;*/
-}
-.bg {
-    position: fixed;
-    background: url('../img/wood-dark-l.png') no-repeat;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 144px;
-    background-size: cover;
-}
-.goodly-webinar__main-container {
-    width: 100%;
+.goodly-webinar__header-right {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-bottom: 30px;
+}
+.userControls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+}
+.userControls_wrap {
+    padding: 0 11px;
+    border-right: 1px solid var(--colorFont);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.icon {
+    cursor: pointer;
+}
+.userControls_icon {
+    position: relative;
+    margin: 0 11px;
+    cursor: pointer;
+    z-index: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.userControls_icon:hover {
+    color: var(--active);
+}
+.userControls_icon:hover.userControls_icon:before {
+    content: '';
+    position: absolute;
+    top: -9px;
+    left: -7px;
+    right: -7px;
+    border-radius: 18px;
+    height: 36px;
+    background-color: #5B88BD;
+    opacity: .1;
+    z-index: 1;
+}
+.userControls_icon:hover path {
+fill: var(--active);
+}
+.userControls_fill:hover path:nth-child(1) {
+fill: none;
+}
+.countMember {
+    margin-left: 10px;
+}
+.userControls_icon.logout {
+    margin-left: 20px;
+    }
+.new {
+    text-align: center;
+    position: absolute;
+    right: -10px;
+    top: -8px;
+    width: 17px;
+    height: 17px;
+    color: #fff;
+    background-color: #67B728;
+    border-radius: 50%;
+    font-size: 10px;
+    line-height: 16px;
+}
+.message.new {
+    background-color: var(--active);
+}
+/* .close{
+    -webkit-transition:-webkit-transform 1s;
+    transition:-webkit-transform 1s;
+    -o-transition:transform 1s;
+    transition:transform 1s;
+    transition:transform 1s, -webkit-transform 1s;
+    transition:transform 1s,-webkit-transform 1s;
+    margin-right:15px
+}
+.close:hover{
+    -webkit-transform:rotate(270deg);
+    -ms-transform:rotate(270deg);
+    transform:rotate(270deg)
+} */
+.volume {
+    max-width: 200px;
+    width: 5%;
+    min-width: 100px;
+    height: 2px;
+    background-color: var(--colorFont);
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    position: relative;
+}
+.volume:before {
+    content: '';
+    background-color: var(--active);
+    height: 2px;
+    width: 60%;
+    position: absolute;
+}
+.volume_thumb {
+    background-color: var(--active);
+    cursor: pointer;
+    position: absolute;
+    left: 60%;
+    width: 14px;
+    height: 14px;
+    top: -6px;
+    border-radius: 50%;
+}
+.volume_thumb:hover {
+    -webkit-box-shadow: inset 0 0 0 1px var(--colorFont);
+            box-shadow: inset 0 0 0 1px var(--colorFont);
+}
+
+.icon_theme:active .theme,
+.icon_theme:focus .theme,
+.icon_theme:hover .theme {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.theme {
+    /* после изменений поставить в режим none; */
+    display: none;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    position: absolute;
+    height: 340px;
+    width: 245px;
+    background-color: #fff;
+    border-radius: 4px;
+    -webkit-box-shadow: 0px 16px 20px rgba(51, 54, 65, 0.1);
+            box-shadow: 0px 16px 20px rgba(51, 54, 65, 0.1);
+    top: 38px;
+    right: -30px;
+}
+.theme_light {
+    width: 100%;
+}
+.theme_dark {
+    width: 100%;
+}
+.theme_text {
+    color: #333;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+}
+.sun {
+    background: url('../img/sun.png') no-repeat;
+}
+.moon {
+    background: url('../img/moon.png');
+}
+
+.goodly-webinar__main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: calc(100vh - 70px);
+    position: relative;
+    padding-left: 28px;
+    padding-top: 15px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    max-height: calc(100vh - 55px);
+    min-height: calc(100vh - 100px);
+}
+.bg {
+    position: fixed;
+    background: url('../img/background-dark.jpg') no-repeat;
+    bottom: 0;
+    left: 0;
+    top:0;
+    right:0;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+.goodly-webinar__main-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     padding-right: 10px;
+    height: calc(100vh - 85px);
+    margin-bottom: 0;
+    /* max-width: 100vw; */
+    width: 100%;
 }
 .goodly-webinar__content-block {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
+    flex-wrap: wrap;
+    /* -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
-            justify-content: space-between;
+            justify-content: space-between; */
     /* width: 70%; */
-    min-height: 60vh;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-position: 0 0;
+    background-position: 0 0; */
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-}
-.goodly-webinar__right-column {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    /* overflow-y: scroll; */
-    /* padding-bottom: 70px; */
-    left:0;
-    position: relative;
-    width: 29%;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    padding: 0 13px;
-    background-color: var(--colorBg);
-    opacity: 0.85;
-    width: 450px;
-    right: 0;
-    height: 100vh;
-}
-.goodly-webinar__chat-title{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 18px;
-    color: var(--colorFont);
-    white-space: nowrap;
-    overflow-x: hidden;
-    -o-text-overflow: ellipsis;
-       text-overflow: ellipsis;
-}
-.goodly-webinar__chat-members {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 13px;
-    line-height: 18px;
-    -webkit-text-decoration-line: underline;
-            text-decoration-line: underline;
-    color: #4A76A8;
-}
-#files-wrap {
-    width: 90%;
-    height: 40px;
-    border-bottom: 1px solid #fff;
-    margin-left: 5%;
-    margin-bottom: 5px;
-}
-#files-wrap svg {
-    margin-right: 30px;
-}
-#files-wrap svg path {
-    fill: var(--colorFont);
-}
-.goodly-webinar__chat-header{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    position: relative;
     width: 100%;
-    height: 20px;
-    top: 10px;
+    min-height: auto;
 }
-.goodly-webinar__chat-input {
-    background: #FFFFFF;
-    border: 2px solid #DDE0E6;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    border-radius: 4px;
-    height: 48px;
-    display: block;
+.goodly-webinar-video-container {
+    position: relative;
+    /* padding-bottom: 56.25%; */
+    padding-top: 30px;
+    height: calc(100vh - 100px);
+    overflow: hidden;
+    background-color: #ffffff;
     width: 100%;
-    padding: 10px;
-    outline: none;
 }
-#chat-form.disabled #chat-message{
-    z-index:1;
-}
-.chat-form_send {
-    display: inline-block;
+/* Возможно закоментировать прелоадеры? */
+.goodly-webinar-video-container .overlay,
+.goodly-webinar-video-container .preload {
+    content: "";
     position: absolute;
-    width: 33px;
-    height: 32px;
-    bottom: 17px;
-    right: 2%;
-}
-/* #chat-form.disabled:after {
-    user-select: none;
-    background: url('../img/block_chat.png') no-repeat;
-    background-position: center;
-    background-size: cover;
-    position:absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    box-sizing: border-box;
-
-} */
-#chat-form.disabled:before{
-    background-color: #DDE0E6;
-    position: absolute;
+    background-color: transparent;
+    z-index: 9999;
+}
+.goodly-webinar-video-container .preload:before{
+    content: "";
+    height: 25%;
+    background-color: transparent; 
+    left: 0;
     right: 0;
-    left:0;
-    content: "Чат заблокирован модератором";
-    font-size: 13px;
-    line-height: 70px;
-    color: #333641;
-    border: 2px solid #333641;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    border-radius: 4px;
-    background-image: url('../img/block_chat.png');
-    background-size: 27px 27px;
-    background-position: 30px 22px;
-    background-repeat: no-repeat;
-    padding-left: 75px;
-    height: 70px;
-    z-index: 1;
-    overflow: hidden;
+    top: 0;
+    position: absolute;
 }
-#chat-wrap {
-    height: calc(100vh - 46px);
+.goodly-webinar-video-container .preload:after{
+    content: "";
+    height: 25%;
+    background-color: transparent;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
 }
-/* оформление ссылок в чате */
-#chat-wrap a {
-    display: inline-block;
-    position: relative;
-    color: #fff;
-    font-weight: 700;
-    font-size: 13px;
-    line-height: 18px;
-    -webkit-text-decoration-line: underline;
-            text-decoration-line: underline;
-    padding: 2px 7px;
-    border-radius: 4px;
-    background: #67B728;
-}
-.goodly-webinar-video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 30px;
-    height: 0;
-    overflow: hidden;
-    background-color: #ffffff;
-}
+/* до этого места прелоадеры */
 .goodly-webinar-video-container iframe,
 .goodly-webinar-video-container #banner {
     position: absolute;
@@ -472,40 +481,165 @@ body {
 
     color: #333641;
 }
+.time {
+    display: inline-block;
+    font-size: 14px;
+    min-width: 145px;
+    margin-left: 10px;
+    width: auto;
+}
+.time-bold {
+    font-weight: 700;
+    font-size: 18px
+}
+.seconds {
+    color: var(--active);
+}
+
+.music {
+    margin-top: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: #333641;
+}
+.music_track {
+    padding: 0 10px 0 5px;
+    border-bottom: 1px solid #333641;
+    margin-left: 5px;
+}
+.music_track_name {
+    font-weight: 700;
+    color: var(--active);
+}
 .copyright {
     position: relative;
     bottom: -8px;
     color: var(--colorFont);
+    align-self: flex-end;
 }
-
-#chat-wrap {
-    height: auto;
+/* стили для части чата */
+.goodly-webinar__right-column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    /* overflow-y: scroll; */
+    /* padding-bottom: 70px; */
+    left:0;
     position: relative;
-    
+    width: 29%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 0 13px;
+    background-color: var(--colorBg);
+    opacity: 0.85;
+    width: 450px;
+    right: 0;
+    height: calc(100vh - 55px);
 }
-#chat-form {
+#files-wrap {
+    height: 55px;
+    margin-bottom: 5px;
+}
+#files-wrap svg {
+    margin-right: 30px;
+}
+#files-wrap svg path {
+    fill: var(--colorFont);
+}
+.goodly-webinar__chat-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: space-between;
+        -ms-flex-pack: space-between;
+            justify-content: space-between;
     position: relative;
-    top: 0;
+    width: 100%;
+    height: 50px;
 }
-#chat-form #chat-message {
-    /* position: fixed;
-    bottom: 5px;
-    width: 26%;
-    right: auto; */
-    height: 70px;
-    resize: none;
-    color: #333641;
+.goodly-webinar__chat-title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 18px;
+    color: var(--colorFont);
+    white-space: nowrap;
+    overflow-x: hidden;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
 }
-
+.author_description {
+    width: calc(100% - 65px);
+}
+.goodly-webinar__chat-author {
+    margin: 0;
+    margin-top: 3px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    color: #6C9DD8;
+}
+.goodly-webinar__chat-rank {
+    font-size: 13px;
+    line-height: 15px;
+    color: #FFFFFF;
+}
 #messages, #files{
     /* max-height: 60vh; */
     overflow: auto;
     list-style: none;
 }
 #files {margin-bottom: 20px;}
-
+/* 
 #files li {
     margin-bottom: 8px;
+} */
+.file {
+    position: relative;
+    left: 13px;
+    right: 13px;
+    top: 8px;
+    width: 100%;
+}
+/* .arrow {
+
+} */
+#chat-wrap {
+    height: calc(100vh - 146px);
+    position: relative;
+}
+/* оформление ссылок в чате */
+#chat-wrap a {
+    display: inline-block;
+    position: relative;
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: #67B728;
+}
+
+#messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    max-height: calc(100vh - 175px);
 }
 #messages li {
     padding: 5px 10px;
@@ -568,6 +702,114 @@ body {
     line-height: 18px;
     color: #333641;
 }
+
+#chat-form {
+    position: absolute;
+    bottom: 5px;
+    left: 13px;
+    right: 13px;
+}
+#chat-form.disabled:before{
+    background-color: #DDE0E6;
+    position: absolute;
+    right: 0;
+    left:0;
+    content: "Чат заблокирован модератором";
+    font-size: 13px;
+    line-height: 70px;
+    color: #333641;
+    border: 2px solid #333641;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border-radius: 4px;
+    background-image: url('../img/block_chat.png');
+    background-size: 27px 27px;
+    background-position: 30px 22px;
+    background-repeat: no-repeat;
+    padding-left: 75px;
+    height: 70px;
+    z-index: 1;
+    overflow: hidden;
+}
+#chat-form #chat-message {
+    /* position: fixed;
+    bottom: 5px;
+    width: 26%;
+    right: auto; */
+    height: 70px;
+    resize: none;
+    color: #333641;
+    z-index:1;
+}
+/* #chat-form.disabled:after {
+    user-select: none;
+    background: url('../img/block_chat.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    position:absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    box-sizing: border-box;
+
+} */
+.goodly-webinar__chat-input {
+    background: #FFFFFF;
+    border: 2px solid #DDE0E6;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border-radius: 4px;
+    height: 48px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+}
+.chat-form_send {
+    display: inline-block;
+    position: absolute;
+    width: 33px;
+    height: 32px;
+    bottom: 1px;
+    right: 2%;
+}
+
+
+
+/*.goodly-webinar__footer {
+    width: 100%;
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    height: 20vh;
+    box-sizing: border-box;
+    padding-top: 4vh;
+}*/
+
+
+
+.goodly-webinar__chat-members {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    color: #4A76A8;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 @-webkit-keyframes sheen {
   0% {
@@ -656,383 +898,183 @@ body {
 }
 
 
-.userControls {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-}
-  
-.userControls_wrap {
-    padding: 0 11px;
-    border-right: 1px solid var(--colorFont);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-}
-.userControls_icon {
-    position: relative;
-    margin: 0 11px;
-    cursor: pointer;
-    z-index: 1;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-}
-.userControls_icon:hover {
-    color: var(--active);
-}
-.userControls_icon:hover.userControls_icon:before {
-    content: '';
-    position: absolute;
-    top: -9px;
-    left: -7px;
-    right: -7px;
-    border-radius: 18px;
-    height: 36px;
-    background-color: #5B88BD;
-    opacity: .1;
-    z-index: 1;
-}
-.userControls_icon:hover path {
-fill: var(--active);
-}
-.userControls_fill:hover path:nth-child(1) {
-fill: none;
-}
-
-.countMember {
-margin-left: 10px;
-}
-.userControls_icon.logout {
-margin-left: 20px;
-}
-.new {
-text-align: center;
-position: absolute;
-right: -10px;
-top: -8px;
-width: 17px;
-height: 17px;
-color: #fff;
-background-color: #67B728;
-border-radius: 50%;
-font-size: 10px;
-line-height: 16px;
-}
-.message.new {
-background-color: var(--active);
-}
-
-.close{
-    -webkit-transition:-webkit-transform 1s;
-    transition:-webkit-transform 1s;
-    -o-transition:transform 1s;
-    transition:transform 1s;
-    transition:transform 1s, -webkit-transform 1s;
-    transition:transform 1s,-webkit-transform 1s;
-    margin-right:15px
-}
-.close:hover{
-    -webkit-transform:rotate(270deg);
-    -ms-transform:rotate(270deg);
-    transform:rotate(270deg)
-}
-.time {
-    display: inline-block;
-    font-size: 14px;
-    min-width: 145px;
-    margin-left: 10px;
-    width: auto;
-}
-.time-bold {
-    font-weight: 700;
-    font-size: 18px
-}
-.seconds {
-    color: var(--active);
-}
-.music {
-    margin-top: 50px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    color: #333641;
-}
-.music_track {
-    padding: 0 10px 0 5px;
-    border-bottom: 1px solid #333641;
-    margin-left: 5px;
-}
-.music_track_name {
-    font-weight: 700;
-    color: var(--active);
-}
-.navbar {
-    background-color: transparent;
-    margin-bottom: 0;
-    border: 0;
-}
-.navbar-default .navbar-toggle .icon-bar {
-    background-color: var(--colorFont);
-}
-/* 27.12 */
-.goodly-webinar__header {
-    height: auto;
-}
-.goodly-webinar__main {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: 100vh;
-}
-.goodly-webinar__content-block {
-    width: 100%;
-    min-height: auto;
-}
-.volume {
-    max-width: 200px;
-    width: 5%;
-    min-width: 100px;
-    height: 2px;
-    background-color: var(--colorFont);
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-    position: relative;
-}
-.volume:before {
-    content: '';
-    background-color: var(--active);
-    height: 2px;
-    width: 60%;
-    position: absolute;
-}
-.volume_thumb {
-    background-color: var(--active);
-    cursor: pointer;
-    position: absolute;
-    left: 60%;
-    width: 14px;
-    height: 14px;
-    top: -6px;
-    border-radius: 50%;
-}
-.volume_thumb:hover {
-    -webkit-box-shadow: inset 0 0 0 1px var(--colorFont);
-            box-shadow: inset 0 0 0 1px var(--colorFont);
-}
-
-.icon_theme:active .theme,
-.icon_theme:focus .theme,
-.icon_theme:hover .theme {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-}
-.theme {
-    /* после изменений поставить в режим none; */
-    display: none;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    position: absolute;
-    height: 340px;
-    width: 245px;
-    background-color: #fff;
-    border-radius: 4px;
-    -webkit-box-shadow: 0px 16px 20px rgba(51, 54, 65, 0.1);
-            box-shadow: 0px 16px 20px rgba(51, 54, 65, 0.1);
-    top: 38px;
-    right: -30px;
-}
-.theme_light {
-    width: 100%;
-}
-.theme_dark {
-    width: 100%;
-}
-
-.theme_text {
-    color: #333;
-    font-size: 14px;
-    line-height: 16px;
-    text-align: center;
-}
-.sun {
-    background: url('../img/sun.png') no-repeat;
-}
-.moon {
-    background: url('../img/moon.png');
-}
-@media screen and (max-width:768px) {
-    .bg {
-        display:none;
-    }
-    .goodly-webinar__header:after {
-        left: 0;
-        right: 0;
-    }
-    /* 27.12 */
-    .goodly-webinar__header-left, 
-    .goodly-webinar__header-right {
-        display: none
-    }
-    .goodly-webinar__header-mobile {
-        display: block;
-        width: 100%;
-    }
-    .goodly-webinar__header-mobile .navbar-header {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
+    @media screen and (max-width: 900px) {
+        .goodly-webinar__right-column {
+            display: none;
+            position: absolute;
+            top: 15px;
+            right: 0;
+            left: auto;
+            bottom: 0;
+        }
     }
 
-    /* 27.12 */
-    /* Отключить из видимости все иконки кроме пользователей */
-    .userControls_wrap:not(:nth-child(3)), .logout{
-        display: none;
+    @media screen and (max-width:768px) {
+        .bg {
+            display:none;
+        }
+        .goodly-webinar__header {
+            height: auto;
+        }
+        .goodly-webinar__header:after {
+            left: 0;
+            right: 0;
+        }
+        /* 27.12 */
+        .goodly-webinar__header-left, 
+        .goodly-webinar__header-right {
+            display: none
+        }
+        .goodly-webinar__header-mobile {
+            display: block;
+            width: 100%;
+        }
+        .goodly-webinar__header-mobile .navbar-header {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
+        }
+
+        /* 27.12 */
+        /* Отключить из видимости все иконки кроме пользователей */
+        .userControls_wrap:not(:nth-child(3)), .logout{
+            display: none;
+        }
+        .userControls_wrap:nth-child(3) {
+            -webkit-box-ordinal-group: 4;
+                -ms-flex-order: 3;
+                    order: 3;
+            border-right: 0;
+        }
+        .goodly-webinar__header-center {
+            display:none;
+        }
+        .goodly-webinar__main {
+            padding-top:0;
+            max-height: 100%;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+            position: relative;
+            top: 0;
+        }
+        .goodly-webinar-video-container {
+            z-index: 2;
+            height: 40vh;
+        }
+        #banner .name {
+            display: none;
+        }
+        #banner .music {
+            display: none;
+        }
+        #timer {
+            display: none;
+        }
+        #banner .play {
+            width: 100%;
+            height: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+        }
+        #banner .play img {
+            width: 80px;
+            height: 80px;
+        }
+        #files-wrap {
+            margin-bottom: 0;
+        }
+        #chat-form #chat-message {
+            width: 100%;
+            left: 0;
+            right:0;
+            bottom: 0;
+            opacity: .8;
+            z-index: 1;
+            height: 48px;
+        }
+        #chat-form #chat-message:active, #chat-form #chat-message:focus {
+            opacity: 1;
+        }
+        .goodly-webinar__right-column {
+            display: flex;
+            position: relative;
+            height: calc(60vh - 70px);
+        }
+        .goodly-webinar__right-column #chat-wrap { 
+            width: 100%; 
+            padding:0;
+            height: calc(60vh - 110px);
+        }
+        .copyright { display: none; }
+        .navbar-toggle {
+            display: block;
+        }
+        /* стили которые были добавлены */
+        .goodly-webinar__main-container{
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            padding: 0;
+            height: auto;
+            margin: 0;
+        }
+        .goodly-webinar__title {
+            font-size: 14px;
+            line-height: 18px;
+            text-align: center;
+            margin: 0 0 20px 0;
+            height: auto !important;
+        }
+        .goodly-webinar__main{padding-left: 0; overflow: auto;}
+        .goodly-webinar__chat-members {display: none;}
+        .goodly-webinar__right-column {width: 100%;}
+        #chat-wrap {padding: 20px;}
+        
+        .volume-ic {display: none;}
+        #banner .name {font-size: 16px; }
+        #banner .name small {font-size: 14px;}
+        #timer {margin: 10px auto;}
+        #timer-clock{font-size: 40px;}
+        #timer{height: 85px;}
+        #messages {
+            height: calc(60vh - 160px);
+        }
+        #messages li {
+            word-wrap: break-word;
+        }
+        .nav.navbar-nav {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
+        }
+        /* проверить элемент .navbar-collapse.collapse при нажатии от 768 до 900 происходят не корректные прыжки у лого */
+        .goodly-webinar__header-mobile .navbar-toggle {
+            float: left;
+        }
+        .goodly-webinar__header-mobile .navbar-collapse {
+            border: 0;
+            -webkit-box-shadow: none;
+                    box-shadow: none;
+        }
+        .goodly-webinar__header-mobile .navbar-nav span {
+            display: block;
+        }
     }
-    .userControls_wrap:nth-child(3) {
-        -webkit-box-ordinal-group: 4;
-            -ms-flex-order: 3;
-                order: 3;
-        border-right: 0;
-    }
-    .goodly-webinar__header-center {
-        display:none;
-    }
-    .goodly-webinar__main-container {
-        margin:0;
-    }
-    .goodly-webinar__right-column {
-    }
-    .goodly-webinar__main {
-        padding-top:0;
-        max-height: 100%;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-        position: relative;
-        top: 0;
-    }
-    .goodly-webinar-video-container {
-        z-index: 2;
-    }
-    #banner .name {
-        display: none;
-    }
-    #banner .music {
-        display: none;
-    }
-    #timer {
-        display: none;
-    }
-    #banner .play {
-        width: 100%;
-        height: 100%;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-    }
-    #banner .play img {
-        width: 80px;
-        height: 80px;
-    }
-    #files-wrap {
-        margin-bottom: 0;
-    }
-    #chat-form #chat-message {
-        width: 100%;
-        left: 0;
-        right:0;
-        opacity: .8;
-        z-index: 1;
-    }
-    #chat-form #chat-message:active, #chat-form #chat-message:focus {
-        opacity: 1;
-    }
-    .goodly-webinar__right-column #chat-wrap { width: 100%; padding:0;}
-    .copyright { display: none; }
-    #shop-logo {
-        width: 120px;
-    }
-    .navbar-toggle {
-        display: block;
-    }
-    /* стили которые были добавлены */
-    .goodly-webinar__header .members-count-wrap{border: none; padding: 0}
-    .goodly-webinar__main-container{
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        padding: 0;
-    }
-    .goodly-webinar__title {
-        font-size: 14px;
-        line-height: 18px;
-        text-align: center;
-        margin: 0 0 20px 0;
-        height: auto !important;
-    }
-    .goodly-webinar__main{padding-left: 0; overflow: auto;}
-    .goodly-webinar__chat-members {display: none;}
-    .goodly-webinar__right-column {width: 100%;}
-    #chat-wrap {padding: 20px;}
-    
-    .volume-ic {display: none;}
-    /* #chat-form {position: relative; margin-top: 10px;} */
-    #banner .name {font-size: 16px; }
-    #banner .name small {font-size: 14px;}
-    #timer {margin: 10px auto;}
-    #timer-clock{font-size: 40px;}
-    #timer{height: 85px;}
-    /* изменения от 27.12 */
-    #messages li {
-        word-wrap: break-word;
-    }
-    .nav.navbar-nav {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
-    }
-    /* проверить элемент .navbar-collapse.collapse при нажатии от 768 до 900 происходят не корректные прыжки у лого */
-    .goodly-webinar__header-mobile .navbar-toggle {
-        float: left;
-    }
-    .goodly-webinar__header-mobile .navbar-collapse {
-        border: 0;
-        -webkit-box-shadow: none;
-                box-shadow: none;
-    }
-    .goodly-webinar__header-mobile .navbar-nav span {
-        display: block;
-    }
-}
+    /* класс pull-right можно удалить */

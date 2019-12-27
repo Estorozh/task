@@ -15,7 +15,7 @@
         var yupeTokenName = 'GDLY';
         var yupeToken = 'SklEWkJobW0wZnlQVzdDT1dhYWNQOW12R3hJeEpqSHbDXG9a0OUgBwR_rA1Y-SGT6cCyu4pSaOgU4YWkYUlr5g==';
     </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
 <link rel="shortcut icon" href="https://web.goodly.pro/assets/b428d944/images/favicon.ico?v=1">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap-yii.css">
@@ -50,7 +50,7 @@ b=0,e=a(document).find("script[src]");b<e.length;b++)if(c=this.normUrl(e[b].src?
 <header class="goodly-webinar__header">
     <div class="goodly-webinar__header-left">
         <i class="goodly-webinar__header-logo">
-            <img id="shop-logo" src="img/logo-light.svg" alt="" height="30px">
+            <img id="shop-logo" src="img/logo-snow.png" alt="" height="30px">
         </i>
     </div>
     <div class="goodly-webinar__header-center">
@@ -69,7 +69,7 @@ b=0,e=a(document).find("script[src]");b<e.length;b++)if(c=this.normUrl(e[b].src?
                     <span class="icon-bar"></span>
                 </button>
                 <i class="goodly-webinar__header-logo">
-                    <img id="shop-logo" src="img/logo-light.svg" alt="logo" height="30px">
+                    <img id="shop-logo" src="img/logo-snow.png" alt="logo" height="30px">
                 </i>
                 <!-- иконка количества пользователей -->
                 <span class="userControls_icon">
@@ -235,15 +235,20 @@ b=0,e=a(document).find("script[src]");b<e.length;b++)if(c=this.normUrl(e[b].src?
     </div>
     <div class="goodly-webinar__right-column">
         <div id="files-wrap">
-            <div class="goodly-webinar__chat-header icon">
-                <svg class="icon" width="30" height="20" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.9355 9.58915C13.1052 9.03362 12.1068 8.70968 11.0327 8.70968C8.14653 8.70968 5.80704 11.0488 5.80704 13.9357C5.80704 15.2735 6.30971 16.4938 7.13649 17.4182H1.16188C0.520262 17.4182 0 16.8997 0 16.2581V5.22581H5.22581V0H12.7748C13.4164 0 13.9355 0.520258 13.9355 1.16129V9.58915ZM4.06569 0V4.06452H0L4.06569 0ZM8.71026 13.2717V14.5993H10.3694V16.2581H11.6966V14.5993H13.3554V13.2717H11.6966V11.6129H10.3694V13.2717H8.71026ZM6.96833 13.9356C6.96833 11.6903 8.78793 9.87097 11.0327 9.87097C13.2777 9.87097 15.0974 11.6903 15.0974 13.9356C15.0974 16.1804 13.2777 18 11.0327 18C8.78793 18 6.96833 16.1804 6.96833 13.9356Z" fill="#333641"/>
-                </svg>
-                <span class="goodly-webinar__chat-title">Дополнительные материалы</span>
+            <div class="goodly-webinar__chat-header">
+                <img src="img/ava_author.png" alt="ava_author">
+                <div class="author_description">
+                    <p class="goodly-webinar__chat-author">Мария Стешенко</p>
+                    <span class="goodly-webinar__chat-rank">ведущий вебинара</span>
+                </div>
                 <!-- <img src="/assets/b428d944/webinar/images/times.svg" alt="" width="12" class="pull-right"></i> -->
             </div>
-            <div id="files" style="display: none;">
-                            </div>
+            <div id="files">
+                <div class="file">
+                    <span class="file_name">Презентация  А.В. Кучеров</span>
+                    <span class="arrow"></span>
+                </div>
+            </div>
         </div>
 
         <div id="chat-wrap">
@@ -314,11 +319,11 @@ b=0,e=a(document).find("script[src]");b<e.length;b++)if(c=this.normUrl(e[b].src?
                     <span class="message_content">Добрый вечер. У меня не работает видео. Что делать? Написать на почту модератору?</span>
                 </li>
             </ul>
+        </div>
         <form action="" id="chat-form" class="">
             <textarea id="chat-message" class="goodly-webinar__chat-input disabled" placeholder="Ваше сообщение..." autocomplete="off"></textarea>
             <span class="chat-form_send icon"><img src="img/send.png" alt="send"></span>
         </form>
-    </div>
     </div>
 
 </main>
