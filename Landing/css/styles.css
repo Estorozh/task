@@ -522,18 +522,14 @@ fill: none;
     align-self: flex-end;
 }
 /* стили для части чата */
-.goodly-webinar__right-column {
+/* .goodly-webinar__right-column {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    /* overflow-y: scroll; */
-    /* padding-bottom: 70px; */
     left:0;
     position: relative;
     width: 29%;
@@ -543,18 +539,35 @@ fill: none;
     background-color: var(--colorBg);
     opacity: 0.85;
     width: 450px;
+    min-width: 400px;
     right: 0;
     height: calc(100vh - 55px);
-}
-#files-wrap {
-    height: 55px;
-    margin-bottom: 5px;
-}
-#files-wrap svg {
-    margin-right: 30px;
-}
-#files-wrap svg path {
-    fill: var(--colorFont);
+} */
+.goodly-webinar__right-column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    align-items: space-between;
+    /* -ms-flex-direction: column;
+        flex-direction: column; */
+    /* overflow-y: scroll; */
+    left:0;
+    right: 0;
+    position: relative;
+    width: 29%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 0 13px;
+    background-color: var(--colorBg);
+    opacity: 0.85;
+    min-width: 400px;
+    width: 450px;
+    height: calc(100vh - 55px);
+    padding-bottom: 75px;
 }
 .goodly-webinar__chat-header {
     display: -webkit-box;
@@ -601,24 +614,248 @@ fill: none;
     overflow: auto;
     list-style: none;
 }
-#files {margin-bottom: 20px;}
+#files {
+    margin: 5px 0;
+    max-height: 30vh;
+    width: 100%;
+}
 /* 
 #files li {
     margin-bottom: 8px;
 } */
 .file {
     position: relative;
-    left: 13px;
-    right: 13px;
-    top: 8px;
+    display: flex;
+    align-items: center;
+    height: 44px;
+    padding: 0px 44px;
     width: 100%;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    opacity: .7;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
-/* .arrow {
-
-} */
-#chat-wrap {
-    height: calc(100vh - 146px);
+.file:after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 11px;
+    right: 11px;
+    border-radius: 50%;
+    background: url('../img/Arrow.png') no-repeat;
+    background-position: center;
+}
+.file:hover {
+    opacity: 1;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.file_name {
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 15px;
+    color: #fff;
+}
+.file_name:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.file_name-author {
+    font-weight: normal;
+    font-size: 11px;
+}
+.file_name:before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 11px;
+    background-position: center;
+    width: 16px;
+    height: 20px;
+}
+.file-default {
+    background-color: #3CC1C1;
+    border: 1px solid #3CC1C1;
+    box-shadow: 0px 1px 0px #31AAAA;
+}
+.file-default:after {
+    background-color: #31AAAA;
+}
+.file-link {
+    background-color: #2FC258;
+    border: 1px solid #2FC258;
+    box-shadow: 0px 1px 0px #29A74C;
+}
+.file-link:after {
+    background-color: #29A74C;
+}
+.file-download {
+    background-color: #D73030;
+    border: 1px solid #D73030;
+    box-shadow: 0px 1px 0px #A92626;
+}
+.file-download:after {
+    background-color: #A92626;
+}
+.file-gifts {
+    background-color: #9C2FC2;
+    border: 1px solid #9C2FC2;
+    box-shadow: 0px 1px 0px #822C9F;
+}
+.file-gifts:after {
+    background-color: #822C9F;
+}
+.file-call {
+    background-color: #E27D20;
+    border: 1px solid #E27D20;
+    box-shadow: 0px 1px 0px #B7671D;
+}
+.file-call:after {
+    background-color: #B7671D;
+}
+.file-default .file_name:before {
+    background: url('../img/icon_file.svg') no-repeat;
+}
+.file-call .file_name:before {
+    background: url('../img/icon_call.svg') no-repeat;
+}
+.file-download .file_name:before {
+    background: url('../img/icon_download.svg') no-repeat;
+}
+.file-gifts .file_name:before {
+    background: url('../img/icon_gifts.svg') no-repeat;
+}
+.file-link .file_name:before {
+    background: url('../img/icon_link.svg') no-repeat;
+}
+    /* эффекты кнопок */
+    /* @-webkit-keyframes sheen {
+        0% {
+          -webkit-transform: skewY(-45deg) translateX(0);
+                  transform: skewY(-45deg) translateX(0);
+        }
+        100% {
+          -webkit-transform: skewY(-45deg) translateX(12.5em);
+                  transform: skewY(-45deg) translateX(12.5em);
+        }
+    }
+    @keyframes sheen {
+        0% {
+        -webkit-transform: skewY(-45deg) translateX(0);
+                transform: skewY(-45deg) translateX(0);
+        }
+        100% {
+        -webkit-transform: skewY(-45deg) translateX(12.5em);
+                transform: skewY(-45deg) translateX(12.5em);
+        }
+    }
+    .file {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+    }
+    
+    .file_name {
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.2s ease-in-out;
+        position: relative;
+        overflow: hidden;
+    }
+    .file_name:before {
+        content: "";
+        background-color: rgba(255, 255, 255, 0.5);
+        height: 100%;
+        width: 3em;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -4.5em;
+        -webkit-transform: skewX(-45deg) translateX(0);
+                transform: skewX(-45deg) translateX(0);
+        transition: none;
+    }
+    .file_name:hover {
+        background-color: #2194E0;
+        color: #fff;
+        border-bottom: 4px solid #1977b5;
+    }
+    .file_name:hover:before {
+        -webkit-transform: skewX(-45deg) translateX(13.5em);
+                transform: skewX(-45deg) translateX(13.5em);
+        transition: all 0.5s ease-in-out;
+    } */
+.product {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 72px;
+    padding: 0px 13px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #4A76A8;
+    box-shadow: 0px 1px 0px #4275AE;
+    background-color: #fff;
+}
+.product_img {
+    width: 48px;
+    height: 48px;
+}
+.product_description {
+    width: 100%;
+    color: #333;
+}
+.product_description_title {
+    font-weight: bold;
+    display: block;
+}
+.product_description_content {
+    font-size: 12px;
+    font-weight: normal;
+    color: #666;
+}
+.btn-pay {
+    /* background: url('../img/Arrow.png') no-repeat;
+    background-position: right center; */
+    background-color: #4A76A8;
+    position: relative;
+    height: 26px;
+    min-width: 100px;
+    padding: 0 25px 0 15px;
+    border: 0;
+    font-size: 11px;
+    border-radius: 14px;
+}
+.btn-pay:after {
+    content: '';
+    position: absolute;
+    right: 11px;
+    top: 7px;
+    width: 11px;
+    height: 10px;
+    background: url('../img/Arrow.png') no-repeat;
+    background-position: center;
+}
+#chat-wrap {
+    height: calc(70vh - 190px);
+    position: relative;
+    /* position: absolute;
+    height: calc(70vh - 190px);
+    bottom: 75px;
+    right: 13px;
+    left: 13px;
+    top: auto; */
+    /* height: calc(70vh - 260px);
+    position: relative; */
 }
 /* оформление ссылок в чате */
 #chat-wrap a {
@@ -639,7 +876,9 @@ fill: none;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    max-height: calc(100vh - 175px);
+    min-height: calc(70vh - 200px);
+    height: auto;
+    max-height: calc(70vh - 190px);
 }
 #messages li {
     padding: 5px 10px;
@@ -993,9 +1232,6 @@ fill: none;
             width: 80px;
             height: 80px;
         }
-        #files-wrap {
-            margin-bottom: 0;
-        }
         #chat-form #chat-message {
             width: 100%;
             left: 0;
@@ -1013,6 +1249,29 @@ fill: none;
             position: relative;
             height: calc(60vh - 70px);
         }
+        .goodly-webinar__chat-header {
+            height: 30px;
+            justify-content: space-between;
+            width: 100%;
+            overflow: hidden;
+            flex-wrap: nowrap;
+        }
+        .goodly-webinar__chat-header img {
+            width: 24px;
+            height: 24px;
+            order: 2;
+        }
+        .author_description {
+            height: auto;
+            width: auto;
+        }
+        .goodly-webinar__chat-author {
+            display: inline;
+            margin-right: 10px;
+        }
+        .goodly-webinar__chat-rank {
+            line-height: 25px;
+        }
         .goodly-webinar__right-column #chat-wrap { 
             width: 100%; 
             padding:0;
@@ -1026,8 +1285,6 @@ fill: none;
         .goodly-webinar__main-container{
             -webkit-box-orient: vertical;
             -webkit-box-direction: normal;
-                -ms-flex-direction: column;
-                    flex-direction: column;
             padding: 0;
             height: auto;
             margin: 0;
@@ -1041,9 +1298,14 @@ fill: none;
         }
         .goodly-webinar__main{padding-left: 0; overflow: auto;}
         .goodly-webinar__chat-members {display: none;}
-        .goodly-webinar__right-column {width: 100%;}
-        #chat-wrap {padding: 20px;}
-        
+        .goodly-webinar__right-column {width: 100%; min-width: 300px;}
+        #chat-wrap {
+            padding: 20px;
+            height: calc(60vh - 140px);
+        }
+        #files {
+            display: none;
+        }
         .volume-ic {display: none;}
         #banner .name {font-size: 16px; }
         #banner .name small {font-size: 14px;}
@@ -1051,7 +1313,9 @@ fill: none;
         #timer-clock{font-size: 40px;}
         #timer{height: 85px;}
         #messages {
-            height: calc(60vh - 160px);
+            min-height: auto;
+            height: auto;
+            max-height: calc(60vh - 155px);
         }
         #messages li {
             word-wrap: break-word;
