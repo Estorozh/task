@@ -258,7 +258,6 @@ fill: none;
     display: flex;
 }
 .theme {
-    /* после изменений поставить в режим none; */
     display: none;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -271,12 +270,76 @@ fill: none;
             box-shadow: 0px 16px 20px rgba(51, 54, 65, 0.1);
     top: 38px;
     right: -30px;
+    align-content: baseline;
 }
 .theme_light {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     width: 100%;
+    height: 168px;
+}
+.block {
+    background: #FFFFFF;
+    box-shadow: 0px 16px 20px rgba(51, 54, 65, 0.1);
+    border-radius: 4px;
+    width: 64px;
+    height: 48px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.block:hover:before {
+    position: absolute;
+    content: '';
+    border-radius: 3px;
+    border: 1px solid #4A76A8;
+    width: 100%;
+    height: 100%;
+    box-shadow: 2px 1px #333;
+}
+.theme_light .block1 {
+    background: url('../img/small_bg1.png') no-repeat;
+}
+.theme_light .block2 {
+    background: linear-gradient(11.52deg, #D9A7C7 2.08%, #FFFCDC 92.93%);
+}
+.theme_light .block3 {
+    background: linear-gradient(11.52deg, #EFEFBB 2.08%, #D4D3DD 92.93%);
+}
+.theme_light .block4 {
+    background: #EDEDED;
+}
+.theme_light .block5 {
+    background: #DDE4ED;
+}
+.theme_light .block6 {
+    background: #D9EAF3;
 }
 .theme_dark {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     width: 100%;
+    height: 168px;
+}
+.theme_dark .block1 {
+    background: url('../img/small_bg1-dark.png') no-repeat;
+}
+.theme_dark .block2 {
+    background: url('../img/small_bg2-dark.png') no-repeat;
+}
+.theme_dark .block3 {
+    background: url('../img/small_bg3-dark.png') no-repeat;
+}
+.theme_dark .block4 {
+    background: #222;
+}
+.theme_dark .block5 {
+    background: #212A37;
+}
+.theme_dark .block6 {
+    background: #36414F;
 }
 .theme_text {
     color: #333;
@@ -284,11 +347,45 @@ fill: none;
     line-height: 16px;
     text-align: center;
 }
+.theme-active:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: url('../img/theme-active.png') no-repeat;
+    background-position: center;
+    border: 1px solid #4A76A8;
+    border-radius: 3px;
+}
 .sun {
+    position: relative;
+    margin-top: 22px;
     background: url('../img/sun.png') no-repeat;
+    background-position-x: 45px;
+    width: 100%;
+}
+.sun:before {
+    position: absolute;
+    content: '';
+    width: 23px;
+    top: -16px;
+    left: 111px;
+    border: 1px solid #E7E7EA;
 }
 .moon {
-    background: url('../img/moon.png');
+    position: relative;
+    margin-top: 22px;
+    background: url('../img/moon.png') no-repeat;
+    background-position-x: 45px;
+    width: 100%;
+}
+.moon:before {
+    position: absolute;
+    content: '';
+    width: 138px;
+    top: -16px;
+    left: 53px;
+    border: 1px solid #E7E7EA;
 }
 
 .goodly-webinar__main {
@@ -651,10 +748,55 @@ fill: none;
     cursor: pointer;
     border-radius: 4px;
     margin-bottom: 8px;
-    opacity: .7;
     -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    overflow: hidden;
+}
+@-webkit-keyframes sheen {
+    0% {
+    -webkit-transform: skewY(-45deg) translateX(0);
+            transform: skewY(-45deg) translateX(0);
+    }
+    100% {
+    -webkit-transform: skewY(-45deg) translateX(12.5em);
+            transform: skewY(-45deg) translateX(12.5em);
+    }
+}
+
+@keyframes sheen {
+0% {
+    -webkit-transform: skewY(-45deg) translateX(0);
+            transform: skewY(-45deg) translateX(0);
+}
+100% {
+    -webkit-transform: skewY(-45deg) translateX(12.5em);
+            transform: skewY(-45deg) translateX(12.5em);
+}
+}
+.file:before {
+    content: "";
+    background-color: rgba(255,255,255,0.5);
+    height: 100%;
+    width: 5em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -6.5em;
+    -webkit-transform: skewX(-45deg) translateX(0);
+        -ms-transform: skewX(-45deg) translateX(0);
+            transform: skewX(-45deg) translateX(0);
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+.file:hover:before {
+    -webkit-transform: skewX(-45deg) translateX(50em);
+        -ms-transform: skewX(-45deg) translateX(50em);
+            transform: skewX(-45deg) translateX(50em);
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 .file:after {
     content: '';
@@ -666,12 +808,6 @@ fill: none;
     border-radius: 50%;
     background: url('../img/Arrow.png') no-repeat;
     background-position: center;
-}
-.file:hover {
-    opacity: 1;
-    -webkit-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
 }
 .file_name {
     font-weight: bold;
@@ -1069,104 +1205,6 @@ fill: none;
     color: #4A76A8;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-@-webkit-keyframes sheen {
-  0% {
-    -webkit-transform: skewY(-45deg) translateX(0);
-            transform: skewY(-45deg) translateX(0);
-  }
-  100% {
-    -webkit-transform: skewY(-45deg) translateX(12.5em);
-            transform: skewY(-45deg) translateX(12.5em);
-  }
-}
-
-@keyframes sheen {
-  0% {
-    -webkit-transform: skewY(-45deg) translateX(0);
-            transform: skewY(-45deg) translateX(0);
-  }
-  100% {
-    -webkit-transform: skewY(-45deg) translateX(12.5em);
-            transform: skewY(-45deg) translateX(12.5em);
-  }
-}
-.file-btn {
-    background-color: #3CC1C1;
-    border: 1px solid #3CC1C1;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    -webkit-box-shadow: 0px 1px 0px #31AAAA;
-            box-shadow: 0px 1px 0px #31AAAA;
-    border-radius: 4px;
-    padding: 15px 15px 15px 45px;
-    background-image: url(../images/file-btn-i.svg); 
-    background-position: 13px 15px;
-    background-size: 12px 16px;
-    background-repeat: no-repeat;
-    display: block;
-    color: #fff;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 15px;
-    position: relative;
-    overflow: hidden;
-}
-.file-btn:after {
-    content: "";
-    width: 22px;
-    height: 22px;
-    background-image: url(../images/file-btn-arrow.svg); 
-    right: 12px;
-    top: 12px;
-    position: absolute;
-
-}
-.file-btn:before {
-    content: "";
-    background-color: rgba(255,255,255,0.5);
-    height: 100%;
-    width: 5em;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: -6.5em;
-    -webkit-transform: skewX(-45deg) translateX(0);
-        -ms-transform: skewX(-45deg) translateX(0);
-            transform: skewX(-45deg) translateX(0);
-    -webkit-transition: none;
-    -o-transition: none;
-    transition: none;
-}
-.file-btn:hover,
-.file-btn:focus {
-    background-color: #3CC1C1;
-    color: #fff;
-    border-bottom: 1px solid #37aeae;
-    text-decoration: none;
-}
-.file-btn:hover:before {
-    -webkit-transform: skewX(-45deg) translateX(50em);
-        -ms-transform: skewX(-45deg) translateX(50em);
-            transform: skewX(-45deg) translateX(50em);
-    -webkit-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-}
-
-
     @media screen and (max-width: 900px) {
         .goodly-webinar__right-column {
             display: none;
@@ -1178,7 +1216,7 @@ fill: none;
         }
     }
 
-    @media screen and (max-width:768px) {
+    @media screen and (max-width:767px) {
         .bg {
             display:none;
         }
@@ -1280,9 +1318,11 @@ fill: none;
             display: flex;
             position: relative;
             height: calc(60vh - 70px);
+            padding-bottom: 50px;
         }
         .goodly-webinar__chat-header {
-            height: 30px;
+            top: -5px;
+            height: 40px;
             -webkit-box-pack: justify;
                 -ms-flex-pack: justify;
                     justify-content: space-between;
@@ -1340,8 +1380,8 @@ fill: none;
             padding: 20px;
             max-height: calc(60vh - 155px);
         }
-        #files {
-            display: none;
+        .file {
+            opacity: 1;
         }
         .volume-ic {display: none;}
         #banner .name {font-size: 16px; }
