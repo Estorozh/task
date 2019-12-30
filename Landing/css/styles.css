@@ -32,7 +32,9 @@
 html {
     font-size: 16px;
     -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+     -ms-text-size-adjust: 100%;
+         text-size-adjust: 100%;
 }
 body {
     background: url(../images/wood-l.png);
@@ -327,7 +329,8 @@ fill: none;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     /* -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -393,8 +396,8 @@ fill: none;
     height: 100%;
 }
 .b-overlay {
-    background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.9)), to(rgba(255, 255, 255, 0.9)));
     background: -o-linear-gradient(bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.9)), to(rgba(255, 255, 255, 0.9)));
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
     border-radius: 3px;
     position: absolute;
@@ -519,7 +522,8 @@ fill: none;
     position: relative;
     bottom: -8px;
     color: var(--colorFont);
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
 }
 /* стили для части чата */
 /* .goodly-webinar__right-column {
@@ -549,9 +553,15 @@ fill: none;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    /* -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    align-items: space-between;
+        flex-wrap: wrap; */
+    -webkit-box-align: space-between;
+        -ms-flex-align: space-between;
+            align-items: space-between;
     /* -ms-flex-direction: column;
         flex-direction: column; */
     /* overflow-y: scroll; */
@@ -573,7 +583,8 @@ fill: none;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     -webkit-box-pack: space-between;
         -ms-flex-pack: space-between;
             justify-content: space-between;
@@ -618,6 +629,9 @@ fill: none;
     margin: 5px 0;
     max-height: 30vh;
     width: 100%;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
 }
 /* 
 #files li {
@@ -625,8 +639,12 @@ fill: none;
 } */
 .file {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 44px;
     padding: 0px 44px;
     width: 100%;
@@ -635,7 +653,7 @@ fill: none;
     margin-bottom: 8px;
     opacity: .7;
     -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 .file:after {
@@ -652,7 +670,7 @@ fill: none;
 .file:hover {
     opacity: 1;
     -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 .file_name {
@@ -681,7 +699,8 @@ fill: none;
 .file-default {
     background-color: #3CC1C1;
     border: 1px solid #3CC1C1;
-    box-shadow: 0px 1px 0px #31AAAA;
+    -webkit-box-shadow: 0px 1px 0px #31AAAA;
+            box-shadow: 0px 1px 0px #31AAAA;
 }
 .file-default:after {
     background-color: #31AAAA;
@@ -689,7 +708,8 @@ fill: none;
 .file-link {
     background-color: #2FC258;
     border: 1px solid #2FC258;
-    box-shadow: 0px 1px 0px #29A74C;
+    -webkit-box-shadow: 0px 1px 0px #29A74C;
+            box-shadow: 0px 1px 0px #29A74C;
 }
 .file-link:after {
     background-color: #29A74C;
@@ -697,7 +717,8 @@ fill: none;
 .file-download {
     background-color: #D73030;
     border: 1px solid #D73030;
-    box-shadow: 0px 1px 0px #A92626;
+    -webkit-box-shadow: 0px 1px 0px #A92626;
+            box-shadow: 0px 1px 0px #A92626;
 }
 .file-download:after {
     background-color: #A92626;
@@ -705,7 +726,8 @@ fill: none;
 .file-gifts {
     background-color: #9C2FC2;
     border: 1px solid #9C2FC2;
-    box-shadow: 0px 1px 0px #822C9F;
+    -webkit-box-shadow: 0px 1px 0px #822C9F;
+            box-shadow: 0px 1px 0px #822C9F;
 }
 .file-gifts:after {
     background-color: #822C9F;
@@ -713,7 +735,8 @@ fill: none;
 .file-call {
     background-color: #E27D20;
     border: 1px solid #E27D20;
-    box-shadow: 0px 1px 0px #B7671D;
+    -webkit-box-shadow: 0px 1px 0px #B7671D;
+            box-shadow: 0px 1px 0px #B7671D;
 }
 .file-call:after {
     background-color: #B7671D;
@@ -795,15 +818,21 @@ fill: none;
     } */
 .product {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     height: 72px;
     padding: 0px 13px;
     width: 100%;
     border-radius: 4px;
     border: 1px solid #4A76A8;
-    box-shadow: 0px 1px 0px #4275AE;
+    -webkit-box-shadow: 0px 1px 0px #4275AE;
+            box-shadow: 0px 1px 0px #4275AE;
     background-color: #fff;
 }
 .product_img {
@@ -846,16 +875,14 @@ fill: none;
     background-position: center;
 }
 #chat-wrap {
-    height: calc(70vh - 190px);
+    height: 100%;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     position: relative;
-    /* position: absolute;
-    height: calc(70vh - 190px);
-    bottom: 75px;
-    right: 13px;
-    left: 13px;
-    top: auto; */
-    /* height: calc(70vh - 260px);
-    position: relative; */
+    overflow-y: scroll;
+    -ms-touch-action: manipulation;
+        touch-action: manipulation;
 }
 /* оформление ссылок в чате */
 #chat-wrap a {
@@ -870,15 +897,18 @@ fill: none;
     padding: 2px 7px;
     border-radius: 4px;
     background: #67B728;
+    word-break: break-all;
 }
 
 #messages {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    min-height: calc(70vh - 200px);
+    -ms-touch-action: manipulation;
+        touch-action: manipulation;
+    /* min-height: calc(70vh - 200px);
     height: auto;
-    max-height: calc(70vh - 190px);
+    max-height: calc(70vh - 190px); */
 }
 #messages li {
     padding: 5px 10px;
@@ -1119,7 +1149,7 @@ fill: none;
     -webkit-transition: none;
     -o-transition: none;
     transition: none;
-  }
+}
 .file-btn:hover,
 .file-btn:focus {
     background-color: #3CC1C1;
@@ -1245,21 +1275,28 @@ fill: none;
             opacity: 1;
         }
         .goodly-webinar__right-column {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             position: relative;
             height: calc(60vh - 70px);
         }
         .goodly-webinar__chat-header {
             height: 30px;
-            justify-content: space-between;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
             width: 100%;
             overflow: hidden;
-            flex-wrap: nowrap;
+            -ms-flex-wrap: nowrap;
+                flex-wrap: nowrap;
         }
         .goodly-webinar__chat-header img {
             width: 24px;
             height: 24px;
-            order: 2;
+            -webkit-box-ordinal-group: 3;
+                -ms-flex-order: 2;
+                    order: 2;
         }
         .author_description {
             height: auto;
@@ -1275,7 +1312,7 @@ fill: none;
         .goodly-webinar__right-column #chat-wrap { 
             width: 100%; 
             padding:0;
-            height: calc(60vh - 110px);
+            /* height: calc(60vh - 110px); */
         }
         .copyright { display: none; }
         .navbar-toggle {
@@ -1301,7 +1338,7 @@ fill: none;
         .goodly-webinar__right-column {width: 100%; min-width: 300px;}
         #chat-wrap {
             padding: 20px;
-            height: calc(60vh - 140px);
+            max-height: calc(60vh - 155px);
         }
         #files {
             display: none;
@@ -1312,11 +1349,6 @@ fill: none;
         #timer {margin: 10px auto;}
         #timer-clock{font-size: 40px;}
         #timer{height: 85px;}
-        #messages {
-            min-height: auto;
-            height: auto;
-            max-height: calc(60vh - 155px);
-        }
         #messages li {
             word-wrap: break-word;
         }
