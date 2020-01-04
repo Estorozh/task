@@ -114,7 +114,7 @@ function filesClose() {
     max-height: 30vh;
     position: relative; `;
   if(document.body.clientWidth > 767) {
-    files.style.display = 'block';
+    files.style.display = 'table';
   } else {
     files.style.display = 'none';
   }

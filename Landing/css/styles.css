@@ -724,8 +724,11 @@ fill: none;
     list-style: none;
 }
 #files {
+    display: table;
     margin: 5px 0;
-    max-height: 30vh;
+    /* min-height: 10vh; */
+    /* height: 100%; */
+    max-height: 50vh;
     width: 100%;
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
