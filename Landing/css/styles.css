@@ -731,6 +731,13 @@ fill: none;
         -ms-flex-positive: 1;
             flex-grow: 1;
 }
+.files-mobile {
+    display: none;
+    height: 44px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
 /* 
 #files li {
     margin-bottom: 8px;
@@ -1304,6 +1311,12 @@ li .username.moderator {
             width: 80px;
             height: 80px;
         }
+        .files-mobile {
+            display: block;
+        }
+        #files {
+            display: none;
+        }
         #chat-form #chat-message {
             width: 100%;
             left: 0;
@@ -1369,6 +1382,7 @@ li .username.moderator {
             padding: 0;
             height: auto;
             margin: 0;
+            z-index:-1;
         }
         .goodly-webinar__title {
             font-size: 14px;
