@@ -530,6 +530,9 @@ fill: none;
     height: 100px;
     line-height: 0;
 }
+.forbidden_play {
+    display: none;
+}
 .forbidden_text-warning {
     display: block;
     color: #F4142F;
@@ -1268,6 +1271,7 @@ li .username.moderator {
                 flex-wrap: wrap;
             position: relative;
             top: 0;
+            z-index: 1;
         }
         .goodly-webinar-video-container {
             z-index: 2;
@@ -1275,6 +1279,11 @@ li .username.moderator {
         }
         #banner .name {
             display: none;
+        }
+        .forbidden_play {
+            display: block;
+            width: 50px;
+            height: 50px;
         }
         #banner .music {
             display: none;
