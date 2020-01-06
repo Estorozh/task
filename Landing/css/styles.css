@@ -126,6 +126,9 @@ body {
     display: -ms-flexbox;
     display: flex;
 }
+.goodly-webinar__header-right.forbidden {
+    opacity: .2;
+}
 .userControls {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -461,6 +464,11 @@ fill: none;
     height: 100%;
 }
 .b-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     background: -o-linear-gradient(bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
     background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.9)), to(rgba(255, 255, 255, 0.9)));
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
@@ -471,6 +479,13 @@ fill: none;
     width: 100%;
     height: 100%;
 }
+
+#banner.forbidden #forbidden {
+    display: flex;
+    align-items: center;
+    width: max-content;
+
+}
 #banner .play {
     display: none;
 }
@@ -480,7 +495,6 @@ fill: none;
     font-weight: 500;
     font-size: 26px;
     line-height: 26px;
-    margin-top: 20%;
     text-align: center;
     width: 100%;
     color: #333641;
@@ -491,15 +505,16 @@ fill: none;
     margin-top: 20px;
 }
 #timer {
-    border: 1px solid #333641;
+    border: 2px solid rgba(255, 255, 255, 0.4); 
+    background: #EFF1F5; 
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    border-radius: 64px;
-    margin: 60px auto;
+    border-radius: 6px; 
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
-    height: 100px;
+    margin-top:30px;
+    height: 199px; 
     line-height: 100px;
     padding:  10px 40px;
     display: -webkit-box;
@@ -508,6 +523,27 @@ fill: none;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+}
+#banner.forbidden #timer {
+    border-radius: 64px;
+    border: 1px solid #E53B35;
+    height: 100px;
+    line-height: 0;
+}
+.forbidden_play {
+    display: none;
+}
+.forbidden_text-warning {
+    display: block;
+    color: #F4142F;
+    font-size: 24px;
+    line-height: 10px;
+    margin-top: 25px;
+}
+.forbidden_text-simple {
+    color: #333641;
+    font-size: 14px;
+    line-height: 48px;
 }
 #timer ul {
     list-style: none;
@@ -563,9 +599,53 @@ fill: none;
 .seconds {
     color: var(--active);
 }
-
+.pay {
+    position: relative;
+    background-color: var(--colorBg);
+    margin-top: 20px;
+    cursor: pointer;
+    width: 230px;
+    height: 42px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 24px;
+    padding: 12px 52px 12px 44px;
+}
+.pay:after {
+    content: '❯';
+    position: absolute;
+    height: 7px;
+    width: 12px;
+    top: 12px;
+    right: 28px;
+    font-size: 16px;
+}
+.pay:before {
+    content: "";
+    background-color: rgba(255,255,255,0.5);
+    height: 100%;
+    width: 5em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -6.5em;
+    -webkit-transform: skewX(-45deg) translateX(0);
+        -ms-transform: skewX(-45deg) translateX(0);
+            transform: skewX(-45deg) translateX(0);
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+.pay:hover:before {
+    -webkit-transform: skewX(-45deg) translateX(50em);
+        -ms-transform: skewX(-45deg) translateX(50em);
+            transform: skewX(-45deg) translateX(50em);
+    -webkit-transition: all .8s ease-in-out;
+    -o-transition: all .8s ease-in-out;
+    transition: all .8s ease-in-out;
+}
 .music {
-    margin-top: 50px;
+    margin-top: 20px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -615,6 +695,9 @@ fill: none;
     height: calc(100vh - 55px);
     padding-bottom: 75px;
 }
+.goodly-webinar__right-column.forbidden {
+    filter: blur(5px);
+}
 .goodly-webinar__right-column:before {
     content: "❯";
     position: absolute;
@@ -655,7 +738,7 @@ fill: none;
     white-space: nowrap;
     overflow-x: hidden;
     -o-text-overflow: ellipsis;
-       text-overflow: ellipsis;
+    text-overflow: ellipsis;
 }
 .author_description {
     width: calc(100% - 65px);
@@ -671,7 +754,7 @@ fill: none;
 .goodly-webinar__chat-rank {
     font-size: 13px;
     line-height: 15px;
-    color: #FFFFFF;
+    color: var(--colorFont);
 }
 #messages, #files{
     overflow: auto;
@@ -712,7 +795,7 @@ fill: none;
     transition: all 0.5s ease;
     overflow: hidden;
 }
-@-webkit-keyframes sheen {
+/* @-webkit-keyframes sheen {
     0% {
     -webkit-transform: skewY(-45deg) translateX(0);
             transform: skewY(-45deg) translateX(0);
@@ -731,8 +814,8 @@ fill: none;
 100% {
     -webkit-transform: skewY(-45deg) translateX(12.5em);
             transform: skewY(-45deg) translateX(12.5em);
-}
-}
+} 
+} */
 .file:before {
     content: "";
     background-color: rgba(255,255,255,0.5);
@@ -1188,6 +1271,7 @@ li .username.moderator {
                 flex-wrap: wrap;
             position: relative;
             top: 0;
+            z-index: 1;
         }
         .goodly-webinar-video-container {
             z-index: 2;
@@ -1195,6 +1279,11 @@ li .username.moderator {
         }
         #banner .name {
             display: none;
+        }
+        .forbidden_play {
+            display: block;
+            width: 50px;
+            height: 50px;
         }
         #banner .music {
             display: none;
@@ -1239,9 +1328,16 @@ li .username.moderator {
             background-image: linear-gradient(#66a3da, #3f88ce);
             cursor: pointer;
             -webkit-animation: buttonPulse 1.5s infinite cubic-bezier(0.6, 0, 0, 1);
+            animation: buttonPulse 1.5s infinite cubic-bezier(0.6, 0, 0, 1);
         }
-        .files_button:hover, .presentation:hover { -webkit-animation:none}
+        .files_button:hover, .presentation:hover {
+            -webkit-animation:none;
+            animation: none;
+        }
         @-webkit-keyframes buttonPulse{
+            to{ box-shadow:0 0 0 23px rgba(81, 147, 218, 0), inset 0 1px 0 #9ec3e6}
+        }
+        @keyframes buttonPulse {
             to{ box-shadow:0 0 0 23px rgba(81, 147, 218, 0), inset 0 1px 0 #9ec3e6}
         }
         #files {
