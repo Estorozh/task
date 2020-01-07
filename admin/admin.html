@@ -51,7 +51,7 @@
             <input type="checkbox" class="webinar_inputcheck">
             <span class="webinar_check"></span>
           </label>
-          <img src="img/icon_autowebinar-play.png" alt="autowebinar">
+          <img src="img/icon_autowebinar-play.png" class="webinar_left_img" alt="autowebinar">
           <div class="webinar_decript">
             <span class="webinar_name">Название автовебинара</span>
             <div class="webinar_link">
@@ -87,7 +87,7 @@
             <input type="checkbox" class="webinar_inputcheck">
             <span class="webinar_check"></span>
           </label>
-          <img src="img/icon_autowebinar-play.png" alt="autowebinar">
+          <img src="img/icon_autowebinar-play.png" class="webinar_left_img"  alt="autowebinar">
           <div class="webinar_decript">
             <span class="webinar_name">Название автовебинара</span>
             <div class="webinar_link">
@@ -123,7 +123,7 @@
             <input type="checkbox" class="webinar_inputcheck">
             <span class="webinar_check"></span>
           </label>
-          <img src="img/icon_autowebinar-play.png" alt="autowebinar">
+          <img src="img/icon_autowebinar-play.png" class="webinar_left_img"  alt="autowebinar">
           <div class="webinar_decript">
             <span class="webinar_name">Название автовебинара</span>
             <div class="webinar_link">
@@ -159,7 +159,7 @@
             <input type="checkbox" class="webinar_inputcheck">
             <span class="webinar_check"></span>
           </label>
-          <img src="img/icon_autowebinar-play.png" alt="autowebinar">
+          <img src="img/icon_autowebinar-play.png" class="webinar_left_img"  alt="autowebinar">
           <div class="webinar_decript">
             <span class="webinar_name">Название автовебинара</span>
             <div class="webinar_link">
@@ -195,7 +195,7 @@
             <input type="checkbox" class="webinar_inputcheck">
             <span class="webinar_check"></span>
           </label>
-          <img src="img/icon_autowebinar-play.png" alt="autowebinar">
+          <img src="img/icon_autowebinar-play.png" class="webinar_left_img"  alt="autowebinar">
           <div class="webinar_decript">
             <span class="webinar_name">Название автовебинара</span>
             <div class="webinar_link">
@@ -231,7 +231,7 @@
             <input type="checkbox" class="webinar_inputcheck">
             <span class="webinar_check"></span>
           </label>
-          <img src="img/icon_autowebinar-play.png" alt="autowebinar">
+          <img src="img/icon_autowebinar-play.png" class="webinar_left_img"  alt="autowebinar">
           <div class="webinar_decript">
             <span class="webinar_name">Название автовебинара</span>
             <div class="webinar_link">
@@ -267,7 +267,7 @@
             <input type="checkbox" class="webinar_inputcheck">
             <span class="webinar_check"></span>
           </label>
-          <img src="img/icon_autowebinar-play.png" alt="autowebinar">
+          <img src="img/icon_autowebinar-play.png" class="webinar_left_img"  alt="autowebinar">
           <div class="webinar_decript">
             <span class="webinar_name">Название автовебинара</span>
             <div class="webinar_link">
@@ -303,7 +303,7 @@
             <input type="checkbox" class="webinar_inputcheck">
             <span class="webinar_check"></span>
           </label>
-          <img src="img/icon_autowebinar-play.png" alt="autowebinar">
+          <img src="img/icon_autowebinar-play.png" class="webinar_left_img"  alt="autowebinar">
           <div class="webinar_decript">
             <span class="webinar_name">Название автовебинара</span>
             <div class="webinar_link">
@@ -342,6 +342,32 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>
     <script src="js/simple-pagination.js"></script>
-    <script src="script.js"></script>
+    <script>
+    //simple pagination
+    $(function() {
+      $('.pagination').pagination({
+        items: 30,
+        itemsOnPage: 8,
+        cssStyle: 'light-theme',
+        displayedPages: 4,
+        edges: 1,
+        prevText: '<',
+        nextText: '>'
+      });
+    });
+    //dropdown
+    let header_dropdown_arrow = document.getElementsByClassName('header_filter_arrow'),
+      header_dropdown = document.querySelector('.header_dropdown');
+    header_dropdown_arrow[0].addEventListener('click', (e)=> {
+      header_dropdown.classList.remove('hide');
+      e.target.classList.add('hide');
+      e.target.previousElementSibling.classList.add('hide');
+    });
+    header_dropdown_arrow[1].addEventListener('click', (e)=> {
+      header_dropdown.classList.add('hide');
+      header_dropdown_arrow[0].classList.remove('hide');
+      header_dropdown_arrow[0].previousElementSibling.classList.remove('hide');
+    });
+    </script>
   </body>
 </html>

@@ -954,6 +954,7 @@ fill: none;
     background: url('../img/icon_link.svg') no-repeat;
 }
 .product {
+    cursor: pointer;
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;

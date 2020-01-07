@@ -1,0 +1,116 @@
+.irs {
+  position: relative;
+  display: block;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.irs--big .irs-line {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  outline: none !important;
+  top: 39px;
+  height: 2px;
+  border: 1px solid #ddd;
+}
+.irs--big .irs-bar {
+  position: absolute;
+  display: block;
+  top: 39px;
+  height: 2px;
+  background-color:#92bce0;
+  border: 1px solid#ddd;
+}
+.irs-min, .irs-max {
+  display: none;
+}
+.irs--big .irs-from, .irs--big .irs-to, .irs--big .irs-single {
+  background-color: #fff;
+  z-index: 1;
+  color:white;
+  text-shadow: none;
+  padding: 1px 5px;
+  background-color: #428bca;
+  background: linear-gradient(to bottom,#428bca 0%,#3071a9 100%);
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 3px;
+}
+.irs-from, .irs-to, .irs-single {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: default;
+  white-space: nowrap;
+}
+.irs-from {
+  font-size: 12px;
+  color: #333;
+  padding: 3px 7px;
+  background-color: #fff;
+}
+
+.irs-handle {
+  top: 25px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0,0,0,0.3);
+  background-color: #cbcfd5;
+  background: linear-gradient(to bottom, white 0%, #B4B9BE 30%, white 100%);
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.2),inset 0 0 3px 1px #fff;
+  border-radius: 30px;
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  cursor: default;
+  z-index: 1;
+  cursor: pointer;
+}
+.irs-handle:hover {
+  border-color:rgba(0,0,0,0.45);
+  background-color: #939ba7;
+  background: linear-gradient(to bottom,#fff 0%, #919BA5 30%, #fff 100%);
+}
+
+.irs-grid {
+  display: block;
+  position: absolute;
+  height: 20px;
+  top: 5px;
+}
+.irs-grid-pol {
+  display: none;
+}
+.irs--big .irs-grid-text {
+  color: #999;
+  position: absolute;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 9px;
+  line-height: 9px;
+  padding: 0 3px;
+  top: 0;
+}
+
+
+.irs-hidden-input {
+  position: absolute !important;
+  display: block !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden;
+  outline: none !important;
+  z-index: -9999 !important;
+  background: none !important;
+  border-style: solid !important;
+  border-color:transparent !important;
+}

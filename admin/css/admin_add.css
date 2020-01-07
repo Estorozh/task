@@ -1,0 +1,111 @@
+.wrapper {
+  background-color: #fff;
+}
+.block_add {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 2%;
+  padding: 0 4%;
+  width: 100%;
+  margin-bottom: 1%;
+}
+.block_add:after {
+  bottom: -20px;
+  content: '';
+  position: absolute;
+  width: 92%;
+  height: 3px;
+  background-color: #F7F7F7;
+}
+.block_add input {
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  height: 34px;
+  padding-left: 40px;
+  margin: 10px 0 20px;
+}
+.neccessary:after {
+  content: '*';
+  position: relative;
+  left: 2px;
+  top: -4px;
+  color: red;
+}
+#webinar_name {
+  width: 100%;
+  background: url('../img/icon_create-name.svg') no-repeat;
+  background-position: 10px center;
+}
+.block_add-half {
+  width: 47%;
+}
+#webinar_author {  
+  width: 100%;
+  background: url('../img/icon_create-user.svg') no-repeat;
+  background-position: 10px center;
+}
+#webinar_id {  
+  width: 100%;
+  background: url('../img/icon_create-id.svg') no-repeat;
+  background-position: 10px center;
+}
+#webinar_link {  
+  width: 100%;
+  background: url('../img/icon_create-link.svg') no-repeat;
+  background-position: 10px center;
+}
+#webinar_calendar {  
+  width: 100%;
+  background: url('../img/icon_create-calendar.svg') no-repeat;
+  background-position: 10px center;
+}
+#webinar_time-hours {  
+  width: 49%;
+  background: url('../img/icon_create-time.svg') no-repeat;
+  background-position: 10px center;
+}
+#webinar_time-minuts {  
+  width: 49%;
+  float: right;
+}
+#webinar_time-start {  
+  width: 49%;  
+  background: url('../img/icon_create-calendar.svg') no-repeat;
+  background-position: 10px center;
+}
+#webinar_time-finish {  
+  width: 49%;
+  background: url('../img/icon_create-calendar.svg') no-repeat;
+  background-position: 10px center;
+  float: right;
+}
+.block_button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  padding: 0 4%;
+}
+.button {
+  width: 20%;
+  height: 42px;
+  border-radius: 3px; 
+  margin-right: 10px;
+  padding-right: 30px;
+}
+.btn-save {
+  background-image: url('../img/icon_autowebinar-save.svg');
+  background-repeat: no-repeat;
+  background-position: 90% center;
+}
+.btn-abort {
+  background-color: #fff;
+  border: 1px solid #C4C4C4;
+  background-image: url('../img/icon_create-abort.svg');
+  background-repeat: no-repeat;
+  background-position: 90% center;
+}

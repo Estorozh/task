@@ -1,26 +1,19 @@
-//simple pagination
-$(function() {
-  $('.pagination').pagination({
-    items: 30,
-    itemsOnPage: 8,
-    cssStyle: 'light-theme',
-    displayedPages: 4,
-    edges: 1,
-    prevText: '<',
-    nextText: '>'
-  });
+//rangeSlider
+$("#range_repeat").ionRangeSlider({
+  skin:'big',
+  min: 0,
+  max: 120,
+  step: 10,
+  values: [0, 10, 30, 45, 60, 90, 120],
+  grid: true,
+  grid_snap: true
 });
-//dropdown
-let header_dropdown_arrow = document.getElementsByClassName('header_filter_arrow'),
-  header_dropdown = document.querySelector('.header_dropdown');
-header_dropdown_arrow[0].addEventListener('click', (e)=> {
-  header_dropdown.classList.remove('hide');
-  e.target.classList.add('hide');
-  e.target.previousElementSibling.classList.add('hide');
+$("#range_delay").ionRangeSlider({
+  skin:'big',
+  min: 0,
+  max: 120,
+  step: 10,
+  values: [0, 5, 10, 15, 30, 45, 60],
+  grid: true,
+  grid_snap: true
 });
-header_dropdown_arrow[1].addEventListener('click', (e)=> {
-  header_dropdown.classList.add('hide');
-  header_dropdown_arrow[0].classList.remove('hide');
-  header_dropdown_arrow[0].previousElementSibling.classList.remove('hide');
-});
-
