@@ -688,8 +688,7 @@ fill: none;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     padding: 0 13px;
-    background-color: var(--colorBg);
-    opacity: 0.85;
+    background-color: transparent;
     min-width: 400px;
     width: 450px;
     height: calc(100vh - 55px);
@@ -699,6 +698,16 @@ fill: none;
     filter: blur(5px);
 }
 .goodly-webinar__right-column:before {
+    positioN: absolute;
+    content: '';
+    background-color:var(--colorBg);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: .8;
+}
+.goodly-webinar__right-column:after {
     content: "❯";
     position: absolute;
     width: 18px;
@@ -762,12 +771,22 @@ fill: none;
 }
 #files {
     display: table;
-    margin: 5px 0;
+    position: relative;
+    margin: 5px 0 15px;
     max-height: 50vh;
     width: 100%;
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
+}
+#files:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    background-color: #ccc;
+    bottom: -7px;
+    left: 25%;
 }
 .files-mobile {
     display: none;
@@ -1188,13 +1207,20 @@ li .username.moderator {
     padding: 10px;
     outline: none;
 }
-.chat-form_send {
-    display: inline-block;
+.icon_emotion {
     position: absolute;
-    width: 33px;
-    height: 32px;
-    bottom: 1px;
-    right: 2%;
+    width: 20px;
+    height: 20px;
+    top: calc(50% - 10px);
+    right: 3%;
+    background: url('../img/icon_emotion.png') no-repeat;
+    background-position: center;
+}
+.chat-form_send {
+    display: none;
+}
+.chat-form_send i {
+    font-size:20px;
 }
 
 .goodly-webinar__chat-members {
@@ -1267,6 +1293,7 @@ li .username.moderator {
         .goodly-webinar__main {
             padding-top:0;
             max-height: 100%;
+            height: calc(100vh - 60px);
             -ms-flex-wrap: wrap;
                 flex-wrap: wrap;
             position: relative;
@@ -1343,17 +1370,33 @@ li .username.moderator {
         #files {
             display: none;
         }
+        #chat-form {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: #fff;
+            padding: 2px 8% 2px 1%;
+        }
         #chat-form #chat-message {
             width: 100%;
-            left: 0;
-            right:0;
-            bottom: 0;
             opacity: .8;
             z-index: 1;
             height: 48px;
+            border-radius: 40px;
         }
         #chat-form #chat-message:active, #chat-form #chat-message:focus {
             opacity: 1;
+        }
+        .icon_emotion { right: 10%; }
+        .chat-form_send {
+            display: inline-block;
+            position: absolute;
+            width: 23px;
+            height: 22px;
+            top: calc(50% - 11px);
+            right: 1%;
+            color: var(--active);
         }
         .goodly-webinar__right-column {
             display: -webkit-box;
@@ -1362,8 +1405,10 @@ li .username.moderator {
             position: relative;
             height: calc(60vh - 70px);
             padding-bottom: 50px;
+            top: 3px;
+            opacity: 1;
         }
-        .goodly-webinar__right-column:before {
+        .goodly-webinar__right-column:after {
             display: none;
         }
         .goodly-webinar__chat-header {
