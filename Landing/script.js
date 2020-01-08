@@ -1,7 +1,9 @@
 let icon_theme = document.getElementsByClassName('icon_theme')[1],
   theme = document.querySelector('.theme'),
   icon_message = document.getElementsByClassName('icon_message')[0],
-  rightColumn = document.getElementsByClassName('goodly-webinar__right-column')[0];
+  rightColumn = document.getElementsByClassName('goodly-webinar__right-column')[0],
+  dark = true, 
+  bg = document.getElementsByClassName('bg')[0];
 
 // показание окна выбора тем
 icon_theme.addEventListener('mouseover', () => theme.style.display = 'flex' );
@@ -11,16 +13,76 @@ document.addEventListener('click',(e)=> {
     theme.style.display = "none";
 })
 
+// при выборе фона он меняется
+theme.addEventListener('click',(e) => {
+  if( e.target.closest('.block') ) {
+    if( e.target.parentElement.className == 'theme_dark') {
+      document.documentElement.style.setProperty('--colorBg', '#151A25');
+      document.documentElement.style.setProperty('--colorFont', '#fff');
+    } else {
+      document.documentElement.style.setProperty('--colorBg', '#fff');
+      document.documentElement.style.setProperty('--colorFont', '#333641');
+    }
+
+    switch(e.target.id) {
+      case 'light_floor':
+        bg.style.backgroundImage = 'url("img/background.jpg")';
+      break;
+      case 'light_gradient1':
+        bg.style.backgroundImage = 'linear-gradient(11.52deg, #D9A7C7 2.08%, #FFFCDC 92.93%)';
+      break;
+      case 'light_gradient1':
+        bg.style.backgroundImage = 'linear-gradient(11.52deg, #D9A7C7 2.08%, #FFFCDC 92.93%)';
+      break;
+      case 'light_gradient2':
+        bg.style.backgroundImage = 'linear-gradient(11.52deg, #EFEFBB 2.08%, #D4D3DD 92.93%)';
+      break;
+      case 'light_sky':
+        bg.style.backgroundImage = 'url("img/light-sky.jpg")';
+      break;
+      case 'light_gradient3':
+        bg.style.backgroundImage = 'linear-gradient(11.52deg, #DDE4ED 2.08%, #DDE4ED 92.93%)';
+      break;
+      case 'light_snow':
+        bg.style.backgroundImage = 'url("img/light-snow.jpg")';
+      break;
+      case 'dark_floor':
+        bg.style.backgroundImage = 'url("img/background-dark.jpg")';
+      break;
+      case 'dark_dot':
+        bg.style.backgroundImage = 'url("img/dark-dot.jpg")';
+      break;
+      case 'dark_wood':
+        bg.style.backgroundImage = 'url("img/dark-wood.jpg")';
+      break;
+      case 'dark_color1':
+        bg.style.backgroundImage = 'linear-gradient(11.52deg, #222 2.08%, #222 92.93%)';
+      break;
+      case 'dark_color2':
+        bg.style.backgroundImage = 'linear-gradient(11.52deg, #212A37 2.08%, #212A37 92.93%)';
+      break;
+      case 'dark_color3':
+        bg.style.backgroundImage = 'linear-gradient(11.52deg, #36414F 2.08%, #36414F 92.93%)';
+      break;
+    }
+
+    document.querySelector('.theme-active').classList.remove('theme-active');
+    e.target.classList.add('theme-active');
+  }
+})
+
 // переключение светлой темной темы на мобильном
-let icon_themeMobile = document.getElementsByClassName('icon_theme')[0], dark=true;
+let icon_themeMobile = document.getElementsByClassName('icon_theme')[0];
 icon_themeMobile.addEventListener('click', ()=> {
   if(dark) {
     document.documentElement.style.setProperty('--colorBg', '#fff');
     document.documentElement.style.setProperty('--colorFont', '#333641');
+    bg.style.backgroundImage = 'url("img/background.jpg")';
     dark = false;
   } else {
     document.documentElement.style.setProperty('--colorBg', '#151A25');
     document.documentElement.style.setProperty('--colorFont', '#fff');
+    bg.style.backgroundImage = 'url("img/background-dark.jpg")';
     dark = true;
   }
 } )

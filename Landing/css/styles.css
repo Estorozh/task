@@ -48,7 +48,8 @@ body {
     height: 100vh;
 }
 .goodly-webinar__header {
-    background-color: var(--colorBg);
+    /* background-color: var(--colorBg); */
+    background-color: transparent;
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -693,6 +694,7 @@ fill: none;
     width: 450px;
     height: calc(100vh - 55px);
     padding-bottom: 75px;
+    padding-top: 5px;
 }
 .goodly-webinar__right-column.forbidden {
     filter: blur(5px);
@@ -1358,10 +1360,12 @@ li .username.moderator {
             -webkit-animation: buttonPulse 1.5s infinite cubic-bezier(0.6, 0, 0, 1);
             animation: buttonPulse 1.5s infinite cubic-bezier(0.6, 0, 0, 1);
         }
-        .files_button:hover, .presentation:hover {
+
+        .files-mobile:hover, .presentation:hover {
             -webkit-animation:none;
             animation: none;
         }
+
         @-webkit-keyframes buttonPulse{
             to{ box-shadow:0 0 0 23px rgba(81, 147, 218, 0), inset 0 1px 0 #9ec3e6}
         }
