@@ -62,10 +62,10 @@ files_wrap.style.cssText = `
   border-radius: 10px;  
   padding: 10px;  
   border: 1px solid white;  
-  max-height: 90vh;  
+  max-height: 80vh;  
   min-height: 20vh;  
   height: auto;
-  overflow: auto;
+  overflow-y: auto;
   `; 
 files_wrap_close.style.cssText = `
   color: red;
@@ -79,6 +79,7 @@ files_wrap_close.style.cssText = `
 files_wrap_close.className = 'fa fa-close icon';
 files_wrap.innerHTML = file;
 files_wrap.prepend(files_wrap_close);
+files_wrap.className = 'files_wrap';
 documents.addEventListener('click',() => {
   if(files_wrap_show) {
     filesClose()
@@ -89,9 +90,16 @@ documents.addEventListener('click',() => {
 
 function filesShow() {
   files.style.cssText = `
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-content: center;
-    flex-wrap: wrap;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     max-height: 100%;
     position: fixed;
     z-index: 2;
@@ -105,6 +113,7 @@ function filesShow() {
   files_wrap_show = true;    
   files_wrap_close = document.querySelector('.fa-close');
   files_wrap_close.addEventListener('click', ()=> {filesClose()} );
+  files.addEventListener('click', (e)=>{ if(e.target.id == "files") filesClose() } )
 }
 
 function filesClose() {
@@ -125,3 +134,10 @@ let documents_mobile  = document.querySelector('.files-mobile');
 documents_mobile.addEventListener('click', ()=> {
   filesShow();
 } )
+
+if (files_wrap_show) {
+  document.addEventListener('click',(e)=> {
+    if( !e.target.closest('.files_wrap') )
+      console.log(e.target);
+  });
+}
