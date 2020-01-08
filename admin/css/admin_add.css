@@ -5,9 +5,14 @@
   width: 100%;
 }
 .block_add {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: relative;
   margin-top: 2%;
   margin: 0 4%;
@@ -41,8 +46,11 @@
   width: 47%;
 }
 .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 #webinar_author {  
   width: 100%;
@@ -72,7 +80,10 @@
   width: 100%;
   background: url('../img/icon_create-calendar.svg') no-repeat;
   background-position: 10px center;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 #webinar_calendar:not(:placeholder-shown) {
   background: url('../img/icon_create-calendarColor.svg') no-repeat 10px center;
@@ -93,7 +104,10 @@
   width: 48%;  
   background: url('../img/icon_create-calendar.svg') no-repeat;
   background-position: 10px center;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 #webinar_time-start:not(:placeholder-shown) {
   background: url('../img/icon_create-calendarColor.svg') no-repeat 10px center;
@@ -103,7 +117,10 @@
   background: url('../img/icon_create-calendar.svg') no-repeat;
   background-position: 10px center;
   float: right;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 #webinar_time-finish:not(:placeholder-shown) {
   background: url('../img/icon_create-calendarColor.svg') no-repeat 10px center;
@@ -121,17 +138,27 @@
 }
 .scenario_field {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 25px;
   min-width:300px;
 }
 .scenario_input-fake {
   width: calc(100% - 130px);
   height: 34px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-left: 15px;
   border: 1px solid #ddd;
   border-top-left-radius: 4px;
@@ -139,9 +166,15 @@
 }
 .scenario_btn {
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; 
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center; 
+      -ms-flex-align: center; 
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 130px;
   height: 34px;
   background-color: #4A76A8;
@@ -162,7 +195,8 @@
 .scenario_added {
   display: none;
   height: 34px;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .scenario_added-check {
   width: 100%;
@@ -179,10 +213,17 @@
 
 
 .block_button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100px;
   width: 100%;
   padding: 0 4%;
