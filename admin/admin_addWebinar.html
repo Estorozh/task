@@ -81,6 +81,21 @@
           Допустимое время опоздания
           <input type="text" id="range_delay" value="" />
         </div>
+        <form enctype="multipart/form-data" method="post" class="scenario">
+          <span>Загрузка сценария автовебинара</span>
+          <div class="scenario_added">
+            <span class='scenario_added-check'>Сценарий загружен <i class="fa fa-check" aria-hidden="true"></i></span>
+            <div class="block-button">
+              <button class="btn btn-secondary btn-scenario">Скачать сценарий</button>
+              <button class="btn btn-secondary btn-scenario">Изменить сценарий</button>
+            </div>
+          </div>
+          <input type="file" name="" class="scenario_input" id="scenario_file">
+          <label for="scenario_file" class="scenario_field">
+            <div class="scenario_input-fake">Файл не выбран</div>
+            <div class="scenario_btn">Выбрать</div>
+          </label>
+        </form>
       </div>
       <div class="block_button">
         <button value="Сохранить" class="btn btn-primary btn-save button">Сохранить</button>

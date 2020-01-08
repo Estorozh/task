@@ -221,7 +221,7 @@ lh .header_filter_arrow {
   position: absolute;
   width: 22px;
   height: 22px;
-  right: 20px;
+  right: 30px;
   bottom: 0;
   background: #DFEEFF url('../img/icon_copy.png') no-repeat;
   background-position: center;
@@ -305,7 +305,6 @@ lh .header_filter_arrow {
 }
 
 
-
 .icon {
   cursor: pointer;
 }
@@ -318,4 +317,22 @@ lh .header_filter_arrow {
 }
 .hide {
   display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .webinar-center {
+    flex-wrap: wrap;
+  }
+  .webinar_block:first-child {
+    border-right: 0;
+  }
+  .webinar_block span {
+    margin-bottom: 0;
+  }
+  .header_add_button {
+    width: 175px;
+  }
+  .header_add_button:after {
+    display: none;
+  }
 }

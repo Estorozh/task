@@ -32,3 +32,11 @@ $('#webinar_calendar').datepicker({
   autoClose: true,
   showButtonPanel: true
 });
+
+scenario_file.addEventListener('change',hideLoadScenrio);
+function hideLoadScenrio(e) {
+  let scenario_text = document.getElementsByClassName('scenario_added-check')[0];
+  e.target.nextElementSibling.style.display="none";
+  e.target.previousElementSibling.style.display="flex";
+  scenario_text.append(e.target.files[0].name);
+}
