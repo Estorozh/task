@@ -32,7 +32,7 @@ $('#webinar_calendar').datepicker({
   autoClose: true,
   showButtonPanel: true
 });
-
+//визуальная смена при загрузке файлов
 scenario_file.addEventListener('change',hideLoadScenrio);
 function hideLoadScenrio(e) {
   let scenario_text = document.getElementsByClassName('scenario_added-check')[0];

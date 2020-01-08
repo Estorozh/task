@@ -34,6 +34,9 @@
   background: url('../img/icon_create-name.svg') no-repeat;
   background-position: 10px center;
 }
+#webinar_name:not(:placeholder-shown) {
+  background: url('../img/icon_create-nameColor.svg') no-repeat 10px center;
+}
 .block_add-half {
   width: 47%;
 }
@@ -46,15 +49,24 @@
   background: url('../img/icon_create-user.svg') no-repeat;
   background-position: 10px center;
 }
+#webinar_author:not(:placeholder-shown) {
+  background: url('../img/icon_create-userColor.svg') no-repeat 10px center;
+}
 #webinar_id {  
   width: 100%;
   background: url('../img/icon_create-id.svg') no-repeat;
   background-position: 10px center;
 }
+#webinar_id:not(:placeholder-shown) {
+  background: url('../img/icon_create-idColor.svg') no-repeat 10px center;
+}
 #webinar_link {  
   width: 100%;
   background: url('../img/icon_create-link.svg') no-repeat;
   background-position: 10px center;
+}
+#webinar_link:not(:placeholder-shown) {
+  background: url('../img/icon_create-linkColor.svg') no-repeat 10px center;
 }
 #webinar_calendar {  
   width: 100%;
@@ -62,10 +74,16 @@
   background-position: 10px center;
   user-select: none;
 }
+#webinar_calendar:not(:placeholder-shown) {
+  background: url('../img/icon_create-calendarColor.svg') no-repeat 10px center;
+}
 #webinar_time-hours {  
   width: 48%;
   background: url('../img/icon_create-time.svg') no-repeat;
   background-position: 10px center;
+}
+#webinar_time-hours:not(:placeholder-shown) {
+  background: url('../img/icon_create-timeColor.svg') no-repeat 10px center;
 }
 #webinar_time-minuts {  
   width: 48%;
@@ -77,12 +95,18 @@
   background-position: 10px center;
   user-select: none;
 }
+#webinar_time-start:not(:placeholder-shown) {
+  background: url('../img/icon_create-calendarColor.svg') no-repeat 10px center;
+}
 #webinar_time-finish {  
   width: 48%;
   background: url('../img/icon_create-calendar.svg') no-repeat;
   background-position: 10px center;
   float: right;
   user-select: none;
+}
+#webinar_time-finish:not(:placeholder-shown) {
+  background: url('../img/icon_create-calendarColor.svg') no-repeat 10px center;
 }
 
 

@@ -695,7 +695,6 @@
           }
 
           value = value.join(this.opts.multipleDatesSeparator);
-
           this.$el.val(value);
       },
 
