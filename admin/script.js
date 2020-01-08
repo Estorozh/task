@@ -17,3 +17,18 @@ $("#range_delay").ionRangeSlider({
   grid: true,
   grid_snap: true
 });
+//datepicker на два инпута для повторов
+$('#webinar_time-start').datepicker({
+  range: true,
+  position: "top right",
+  showButtonPanel: true,
+  onSelect: function (fd, d, picker) { 
+    $("#webinar_time-start").val(fd.split("-")[0]);
+    $("#webinar_time-finish").val(fd.split("-")[1]);
+  }
+});
+//datepicker выбора даты проведения
+$('#webinar_calendar').datepicker({
+  autoClose: true,
+  showButtonPanel: true
+});

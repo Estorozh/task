@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/admin_add.css">
     <link rel="stylesheet" href="css/pagination.css">
     <link rel="stylesheet" href="css/ion-rangeSlider.css">
+    <link rel="stylesheet" href="css/air-datepicker.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -58,8 +59,11 @@
         <input type="text" placeholder="Дата начала" id="webinar_calendar" required>
         <div class="block_add-half">
           <span style="width: 100%; display:block;">Продолжительность вебинара</span> 
-          <input type="text" placeholder="00       Часов" id="webinar_time-hours"> :
-          <input type="text" placeholder="00       Минут" id="webinar_time-minuts">
+          <div class="two-input flex">
+            <input type="text" placeholder="00 Часов" id="webinar_time-hours">
+            <span class="input_separate">:</span>
+            <input type="text" placeholder="00 Минут" id="webinar_time-minuts">
+          </div>
         </div>
         <div class="block_add-half">
           Повторение через каждые
@@ -67,8 +71,11 @@
         </div>
         <div class="block_add-half">
           <span style="width: 100%; display:block;">Повторять</span> 
-          <input type="text" placeholder="Дата начала" id="webinar_time-start"> :
-          <input type="text" placeholder="Завершение" id="webinar_time-finish">
+          <div class="two-input flex">
+            <input type="text" placeholder="Начать" id="webinar_time-start">
+            <span class="input_separate">-</span>
+            <input type="text" placeholder="Завершить" id="webinar_time-finish">
+          </div>
         </div>
         <div class="block_add-half">
           Допустимое время опоздания
@@ -86,6 +93,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>
     <script src="js/simple-pagination.js"></script>
     <script src="js/ion-rangeSlider.js"></script>
+    <script src="js/air-datepicker.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
